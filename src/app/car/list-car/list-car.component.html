@@ -1,0 +1,65 @@
+
+
+  <!-- BEGIN : Body-->
+  <body data-col="2-columns" class=" 2-columns ">
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <div class="wrapper">
+
+      <div class="main-panel">
+        <!-- BEGIN : Main Content-->
+        <div class="main-content">
+          <div class="content-wrapper"><div class="row">
+</div>
+<!--Striped rows Inverse Starts-->
+<section id="striped-inverse">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Striped rows Inverse</h4>
+          <p>Use <code>.table-striped </code> and <code>.table-dark</code> to add zebra-striping to any table row and
+            inverse styling within the <code>&lt;tbody&gt;</code>.</p>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <table class="table table-striped table-dark">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Car Model</th>
+                  <th>Car Status</th>
+                  <th>Start location Date</th>
+                  <th>Action</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let c of listCars">
+                  <th scope="row">{{c.id}}</th>
+                  <td>{{c.carModel}}</td>
+                  <td>{{c.carStatus}}</td>
+                  <td>{{c.StartDateLocation}}</td>
+                  <td><button class="btn btn-danger" (click)="deleteCar(c.id)">delete</button></td>
+                  <td>
+                    <button (click)="updateCar(c.id)" class="btn btn-info">Update</button>
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Striped rows Inverse Ends-->
+          </div>
+        </div>
+        <!-- END : End Main Content-->
+
+      </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+  </body>
