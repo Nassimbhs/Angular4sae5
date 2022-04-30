@@ -14,6 +14,7 @@ import { InvitationComponent } from './invitation/invitation.component';
 import { ForumComponent } from './forum/forum.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { TravelsComponent } from './travels/travels.component';
 
 const routes:Routes = [
   { path: 'cars' , component:CarComponent },
@@ -39,7 +40,8 @@ const routes:Routes = [
     InvitationComponent,
     ForumComponent,
     ProfileComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    TravelsComponent
   ],
   imports: [
     BrowserModule,
