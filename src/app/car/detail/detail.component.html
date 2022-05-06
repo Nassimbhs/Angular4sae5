@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+<div class="main-panel">
+    <!-- BEGIN : Main Content-->
+    <div class="main-content">
+        <div class="content-wrapper">
+            <!--Statistics cards Starts-->
+
+            <div class="card">
+                <div class="card-header pb-2">
+                    <h4 class="card-title">Shopping Cart</h4>
+                    <button type="button" class="btn btn-raised btn-warning mr-1">
+                        <i class="ft-x"></i> Cancel
+                      </button>
+                </div>
+                <div class="card-content">
+                    <table class="table table-responsive-sm text-center">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Matricule</th>
+                                <th>Gearbox</th>
+                                <th>Status</th>
+                                <th>Price</th>
+                                <th>Gearbox</th>
+                                <th>Seats</th>
+                                <th>Rating</th>
+                                <th>Start date location</th>
+                                <th>End date location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img class="media-object round-media height-50" src="{{car.image.imagenUrl}}"
+                                        alt="Generic placeholder image" /></td>
+                                <td>{{car.carModel}}</td>
+                                <td>{{car.matricule}}</td>
+                                <td>
+                                    <a class="btn white btn-round btn-primary">{{car.carStatus}}</a>
+                                </td>
+                                <td>${{car.price}}</td>
+                                <td>
+                                  {{car.gearbox}}
+                                </td>
+                                <td>
+                                    {{car.seats}}
+                                  </td>
+                            
+                                  <td>
+                                    {{car.rating}}
+                                  </td>
+                                  
+                                  <td>
+                                    {{car.startdatelocation}}
+                                  </td>
+
+                                  <td>
+                                    {{car.enddatelocation}}
+                                  </td>
+                                </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
