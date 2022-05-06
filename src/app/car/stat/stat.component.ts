@@ -17,35 +17,46 @@ export class StatComponent implements OnInit {
 
   title : "charDemo";
   listCarModel: any[];
-
+  listCarModelNumber: any[];
 
   ngOnInit(): void {
 
     this._service.getCarByModel().subscribe(res => {
       this.listCarModel = res;
       console.log(this.listCarModel);
+
+      
+    this._service.getCarByModelNumber().subscribe(res1 => {
+      this.listCarModelNumber = res1;
+      
       const myChart = new Chart("myChart", {
-        type: 'bar',
-        data: {
-            labels:  this.listCarModel,
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                ],
-               
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+      type: 'bar',
+      data: {
+          labels:  this.listCarModel,
+          datasets: [{
+              label: '# CARS NUMBER',
+              data: this.listCarModelNumber,
+              
+              backgroundColor: [
+                'rgb(252, 3, 74)',
+              ],
+             
+              borderWidth: 1
+              
+          }
+        ]
+      },
+      options: {
+          scales: {
+              y: {
+                max : 10,
+                min : 0,
+                  beginAtZero: true,
+              }
+          }
+      }
+  });
+});
     })
     
 
