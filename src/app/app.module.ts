@@ -17,6 +17,8 @@ import { InvitationComponent } from './invitation/invitation.component';
 import { ForumComponent } from './forum/forum.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { TravelsComponent } from './travels/travels.component';
+import { AddtravelComponent } from './travels/addtravel/addtravel.component';
 <<<<<<< HEAD
 
 const routes:Routes = [
@@ -64,7 +66,9 @@ const routes:Routes = [
     ForumComponent,
     ProfileComponent,
 <<<<<<< HEAD
-    FeedbackComponent
+    FeedbackComponent,
+TravelsComponent,
+AddtravelComponent
 =======
     FeedbackComponent,
     AddCarComponent,
