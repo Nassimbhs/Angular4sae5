@@ -1,0 +1,55 @@
+<div class="main-panel">
+    <!-- BEGIN : Main Content-->
+    <div class="main-content">
+      <div class="content-wrapper"><div class="row">
+  
+  </div>
+  <!--Basic Table Starts-->
+  <section id="simple-table">
+  <div class="row">
+  <div class="col-sm-12">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title"><b>List Travel</b></h4>
+    </div>
+    <div class="card-content">
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Destination</th>
+              <th>Duration</th>
+              <th>StartDate</th>
+              <th>EndDate</th>
+              <th>MissionType</th>      
+              <th>Action</th>
+             
+  
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of listTravels">
+              <td>{{c.destination}}</td>
+              <td>{{c.duration}}</td>
+              <td>{{c.startdate}}</td>
+              <td>{{c.enddate}}</td>
+              <td>{{c.missiontype}}</td>
+             
+              
+             
+              <td><a class="btn btn-danger" (click)="deleteTravel(c.id)">Delete</a></td>
+              <td><a class="btn btn-warning" (click)="updateTravel(c.id)">Update</a></td>
+              <td><a class="btn btn-primary"  (click)="travelsDetails(c.id)">Details</a></td>
+              
+          </tr>
+  
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </section>
+  <!--Basic Table Ends-->
