@@ -24,18 +24,9 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StatComponent } from './car/stat/stat.component';
+import { FrontListCarComponent } from './front/front-list-car/front-list-car.component';
+import { FrontDetailCarComponent } from './front/front-detail-car/front-detail-car.component';
 
-const routes:Routes = [
-  { path: 'addCar' , component:AddCarComponent },
-  { path: 'updateCar/:id' , component:UpdateCarComponent },
-  { path: 'deleteCar' , component:DeleteCarComponent },
-  { path: 'listCar' , component:ListCarComponent },
-  { path: 'detailCar/:id' , component:DetailComponent },
-  { path: 'addChat' , component:AddChatComponent },
-  { path: 'statCar' , component:StatComponent },
-
-
-];
 
 @NgModule({
   declarations: [
@@ -53,7 +44,9 @@ const routes:Routes = [
     DeleteChatComponent,
     AddChatComponent,
     DetailComponent,
-    StatComponent
+    StatComponent,
+    FrontListCarComponent,
+    FrontDetailCarComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +58,6 @@ const routes:Routes = [
     Ng2OrderModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

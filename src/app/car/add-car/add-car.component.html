@@ -16,29 +16,18 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title" id="from-actions-multiple">Event Registration</h4>
                 <div class="alert alert-info" role="alert">
-                  <strong>Multiple Form Actions On Top And Bottom.</strong>
+                  <strong>Add Car</strong>
                 </div>
 
-                <p>To add form actions on top and bottom of the form add a div with <code>.form-actions</code> class to
-                  start
-                  and end the form. Add <code>.buttons-group</code> class along with <code>.float-*</code> class to pull
-                  the
-                  buttons group to either left or right.</p>
+                <h3>
+                  Insert your informations here !
+                </h3>
               </div>
               <div class="card-body">
                 <div class="px-3">
 
                   <form (ngSubmit)="onUpload()" novalidate enctype="multipart/form-data">
-                    <div class="form-actions top clearfix">
-                      <div class="buttons-group float-right">
-                        <button type="button" class="btn btn-raised btn-info mr-1">Action 1</button>
-                        <button type="button" class="btn btn-raised btn-danger mr-1">Action 2</button>
-                        <button type="button" class="btn btn-raised btn-success">Action 3</button>
-                      </div>
-                    </div>
-
                     <div class="row justify-content-md-center">
                       <div class="col-md-6">
                         <div class="form-body">
@@ -73,12 +62,10 @@
 
                           <div class="container row">
                             <div class="col-md-12">
-                              <h1>Upload Image</h1>
+                              <label for="eventRegInput3">Upload Image</label>
                             </div>
                           </div>
 
-                          <hr />
-                          
                         
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="imagen" #imagenInputFile
@@ -86,7 +73,7 @@
                                 <label class="custom-file-label" for="imagen">Choose image</label>
                             </div>
                             <div *ngIf="imagen" class="mt-5">
-                                <h5>Vista Previa:</h5>
+                                <h5>Image preview:</h5>
                                 <div>
                                     <img class="image-thumbnail" style="max-width: 100px" [src]="imagenMin">
                                 </div>
@@ -94,8 +81,6 @@
                             <div class="form-group d-flex justify-content-between my-3">
                                 <button class="btn btn-outline-danger" [disabled]="!imagen" (click)="reset()"><i class="fas fa-sync-alt"></i> Reset</button>
                             </div>
-
-                      
 
                           <div class="row">
                             <div class="form-group col-12 mb-2">
