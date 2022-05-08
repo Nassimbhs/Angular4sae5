@@ -20,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListtravelComponent } from './travels/listtravel/listtravel.component'; 
 import { DetailtravelComponent } from './travels/detailtravel/detailtravel.component';
 import { UpdatetravelComponent } from './travels/updatetravel/updatetravel.component';
-
+import { ListtravlesusersComponent } from './travels/listtravlesusers/listtravlesusers.component';
+import { ReservationtravelComponent } from './reservationtravel/reservationtravel.component';
+import { AddreservationComponent } from './travels/addreservation/addreservation.component'; 
 
 const routes:Routes = [
 
@@ -30,9 +32,10 @@ const routes:Routes = [
   { path: 'forum' , component:ForumComponent },
   { path: 'invitation' , component:InvitationComponent },
   { path: "add-travel", component : AddtravelComponent},
+  { path: "addreservation", component : AddreservationComponent},
   { path: "detailtravel", component : DetailtravelComponent },
   { path: "list-travel", component : ListtravelComponent},
-
+  { path: "list-travelusers", component : ListtravlesusersComponent},
  
  
  
@@ -57,6 +60,9 @@ const routes:Routes = [
     ListtravelComponent,
     DetailtravelComponent,
     UpdatetravelComponent,
+    ListtravlesusersComponent,
+    ReservationtravelComponent,
+    AddreservationComponent,
     
    
    

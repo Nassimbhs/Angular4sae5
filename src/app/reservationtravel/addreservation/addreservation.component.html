@@ -1,0 +1,76 @@
+<div class="main-panel">
+    <!-- BEGIN : Main Content-->
+    <div class="main-content">
+      <div class="content-wrapper"><!-- Basic form layout section start -->
+<section id="horizontal-form-layouts">
+<div class="row">
+
+</div>
+<div class="row">
+<div class="col-md-12">
+  <div class="card">
+    
+    <div class="card-content">
+      <div class="px-3">
+        <form class="form form-horizontal">
+          <div class="form-body">
+            
+            
+
+            <h4 class="form-section"><i class="ft-file-text"></i> <b> Add Réservation</b></h4><br><br>
+
+            <div class="form-group row">
+                <label class="col-md-3 label-control" for="timesheetinput3">Reservation Date:</label>
+                <div class="col-md-9">
+                  <div class="position-relative has-icon-left">
+                    <input type="date" id="timesheetinput3" class="form-control"  [(ngModel)]="reservation.reservationdate"  name="ReservationDate">
+                    <div class="form-control-position">
+                      <i class="ft-clock"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="form-group row">
+                <label class="col-md-3 label-control" for="timesheetinput1">Num Places:</label>
+                <div class="col-md-9">
+                  <div class="position-relative has-icon-left">
+                    <input type="text" id="timesheetinput1" class="form-control"  [(ngModel)]="reservation.numplaces" placeholder="numplaces" name="numplaces">
+                    <div class="form-control-position">
+                      <i class="ft-user"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-3 label-control" for="timesheetinput1">Num Reservation:</label>
+                <div class="col-md-9">
+                  <div class="position-relative has-icon-left">
+                    <input type="text" id="timesheetinput1" class="form-control" [(ngModel)]="reservation.numreservation" placeholder="numreservation" name="numreservation">
+                    <div class="form-control-position">
+                      <i class="ft-user"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            
+
+         
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-raised btn-warning mr-1">
+              <i class="ft-x"></i> Cancel
+            </button>
+            <button type="button" class="btn btn-raised btn-primary mr-1" (click)="addreservation()">
+              <i class="fa fa-check-square-o"></i> Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
