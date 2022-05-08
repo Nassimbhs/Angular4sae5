@@ -34,6 +34,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
  import { CreateEventsComponent } from './events/create-events/create-events.component';
 import { SearchCompanyComponent } from './search-Company/search-company.component';
 import { UpdateReclamationComponent } from './reclamation/update-reclamation/update-reclamation.component';
+import { OrderModule } from 'ngx-order-pipe';
 const routes:Routes = [
   { path: 'cars' , component:CarComponent },
   { path: 'chat' , component:ChatComponent },
@@ -85,7 +86,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   ],
   imports: [
     NgChartsModule,
-  
+  OrderModule,
     HttpClientModule,
     FormsModule,
     BrowserModule,

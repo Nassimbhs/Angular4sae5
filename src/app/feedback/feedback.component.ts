@@ -13,6 +13,8 @@ import { data } from 'jquery';
 })
 export class FeedbackComponent implements OnInit {
 public userlis:any;
+
+orderHeader:String='';
 @Input() feedbac!:feedback;
 id !:number;
 companies:company =new company();
@@ -89,5 +91,8 @@ updateFeedback(id : any){
 }
 gotToFeedBackList(id:number){
   this.rout.navigate(['feedback-update',id]);
+}
+sort(orderHeader:String){
+this.orderHeader=orderHeader;
 }
 }

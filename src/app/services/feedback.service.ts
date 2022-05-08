@@ -17,7 +17,7 @@ export class FeedbackService {
     return this.http.get<company>(" http://localhost:8090/SpringMVC/getcompany");
     
   }
-UpdateFeedback(id:number,feed : feedback){
+   UpdateFeedback(id:number,feed : feedback){
    return this.http.put<feedback>("http://localhost:8090/SpringMVC/modifyFeedBack/"+id,feed);
   }
   deleteFeed(id:number){
