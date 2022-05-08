@@ -1,8 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TravelModel } from '../modal/TravelModel';
-
+import { HttpClient, HttpEvent, HttpHeaders, HttpRequest } from '@angular/common/http';
+const httpOptions = {
+    headers : new HttpHeaders({'Content-Type': 'application/json'})
+  }
 
 @Injectable({
     providedIn: 'root'
@@ -50,6 +52,61 @@ deleteTravel (id: any):Observable<TravelModel>  {
   getTravelByid (id: any):Observable<TravelModel>  {
 
     return this._http.get<TravelModel>(this.travelsUrl+"/retrieve-travel/"+id);
+  }
+
+
+
+   /* Upload image */
+
+   uploadImage(file : File , filename : string) {
+    const imageFormData = new FormData();
+    imageFormData.append('image', file, filename);
+
+    const url = `${this.travelsUrl + "/image/upload"}`
+
+    return this._http.post(url , imageFormData)
+  }
+
+  /* Load image */
+
+  loadImage(id : number) {
+    const url = `${this.travelsUrl + "/image/get/info"}/${id}`
+    return this._http.get(url) 
+  }
+
+   
+  /* File uploading */
+
+  upload(file : File , user : String):Observable<HttpEvent<any>>{
+    const formData = new FormData();
+    formData.append('file' , file);
+
+    const url = `${this.travelsUrl+"/file/upload"}/${user}`
+
+    const req = new HttpRequest('POST', url , formData, {
+		  reportProgress: true,
+		  responseType: 'json'
+		});
+
+    return this._http.request(req)
+  }
+
+  getFile(name : String): Observable<HttpEvent<Blob>> {
+    const url = `${this.travelsUrl+"/file/load"}/${name}`
+		return this._http.get(url , {
+      reportProgress: true ,
+      observe: 'events' ,
+      responseType : 'blob'
+    });
+	}
+
+
+
+
+
+  deleteImage(idImage : number) {
+    const url = `${this.travelsUrl + "/image/delete"}/${idImage}`
+    return this._http.delete(url)
   }
 
 }

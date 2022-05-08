@@ -1,3 +1,5 @@
+
+import { Image } from "./Image"; 
 export class  TravelModel{
     id: number;
     destination: string;
@@ -5,4 +7,6 @@ export class  TravelModel{
     startdate: Date;
     enddate: Date;
     missiontype: string;
+    image : Image;
+    
 }

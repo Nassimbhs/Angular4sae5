@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TravelModel } from 'src/app/modal/TravelModel'; 
+import { TravelModel } from 'src/app/modal/TravelModel';  
 import { Router, ActivatedRoute } from '@angular/router';
 import { travelService } from 'src/app/service/travelService';
 

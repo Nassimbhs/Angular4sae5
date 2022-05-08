@@ -22,18 +22,21 @@
               <th>StartDate</th>
               <th>EndDate</th>
               <th>MissionType</th>      
+              <th>Image</th>
               <th>Action</th>
              
   
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let c of listTravels">
+            <tr *ngFor="let c of listTravels; let i = index">
               <td>{{c.destination}}</td>
               <td>{{c.duration}}</td>
               <td>{{c.startdate}}</td>
               <td>{{c.enddate}}</td>
               <td>{{c.missiontype}}</td>
+              <td><img [src]="listImages[i]" alt="img" class="img-thumbnail rounded mx-auto" width="200px"></td>
+
              
               
              
