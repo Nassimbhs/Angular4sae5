@@ -38,8 +38,8 @@
                         <td><img [src]="listImages[i]" alt="img" class="img-thumbnail rounded mx-auto" width="200px"></td>
             
                         
-                        <td><a class="btn btn-success" routerLink="addreservation" >Réserver</a></td>
-                        <td><a class="btn btn-warning"  >Details</a></td>
+                        <td><a class="btn btn-success" (click)="addreservation(c.id)" >Réserver</a></td>
+                        <td><a class="btn btn-warning"  (click)="travelsDetails(c.id)">Details</a></td>
                 </tr>
               </tbody>
             </table>

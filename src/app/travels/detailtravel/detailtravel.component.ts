@@ -28,7 +28,7 @@ export class DetailtravelComponent implements OnInit {
   }
 
   list(){
-    this.router.navigate(['list-travel']);
+    this.router.navigate(['listreservation']);
   }
 
   }

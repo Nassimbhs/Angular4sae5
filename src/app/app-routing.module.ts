@@ -5,15 +5,18 @@ import { DetailtravelComponent } from './travels/detailtravel/detailtravel.compo
 import {AddtravelComponent} from './travels/addtravel/addtravel.component';
 import { UpdatetravelComponent } from './travels/updatetravel/updatetravel.component';
 import { ListtravlesusersComponent } from './travels/listtravlesusers/listtravlesusers.component';
-import { AddreservationComponent } from './travels/addreservation/addreservation.component'; 
+import { AddreservationComponent } from './travels/addreservation/addreservation.component';
+import { ListreservationComponent } from './reservationtravel/listreservation/listreservation.component';
 const routes: Routes = [
   
    { path: "add-travel", component : AddtravelComponent},
-   { path: "addreservation", component : AddreservationComponent},
+   { path: "addreservation/:id", component : AddreservationComponent},
    { path: "list-travelusers", component  : ListtravlesusersComponent },
    { path: "list-travel", component  : ListtravelComponent },
+   { path: "listreservation", component  : ListreservationComponent },
    { path: "detailtravel/:id", component : DetailtravelComponent  },
    { path: "update-travel/:id", component : UpdatetravelComponent},
+ 
    { path: "", redirectTo : "travels", pathMatch:"full"} 
 ];
 

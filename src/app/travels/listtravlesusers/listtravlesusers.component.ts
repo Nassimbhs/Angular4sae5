@@ -47,5 +47,9 @@ export class ListtravlesusersComponent implements OnInit {
     }
 
    
+    travelsDetails(id: number){
+      this.router.navigate(['detailtravel', id]);
+    }
+  
 
 }

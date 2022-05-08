@@ -22,7 +22,8 @@ import { DetailtravelComponent } from './travels/detailtravel/detailtravel.compo
 import { UpdatetravelComponent } from './travels/updatetravel/updatetravel.component';
 import { ListtravlesusersComponent } from './travels/listtravlesusers/listtravlesusers.component';
 import { ReservationtravelComponent } from './reservationtravel/reservationtravel.component';
-import { AddreservationComponent } from './travels/addreservation/addreservation.component'; 
+import { AddreservationComponent } from './travels/addreservation/addreservation.component';
+import { ListreservationComponent } from './reservationtravel/listreservation/listreservation.component';
 
 const routes:Routes = [
 
@@ -35,8 +36,10 @@ const routes:Routes = [
   { path: "addreservation", component : AddreservationComponent},
   { path: "detailtravel", component : DetailtravelComponent },
   { path: "list-travel", component : ListtravelComponent},
+  { path: "listreservation", component : ListreservationComponent},
   { path: "list-travelusers", component : ListtravlesusersComponent},
- 
+
+  
  
  
 
@@ -63,6 +66,9 @@ const routes:Routes = [
     ListtravlesusersComponent,
     ReservationtravelComponent,
     AddreservationComponent,
+    ListreservationComponent,
+    
+    
     
    
    

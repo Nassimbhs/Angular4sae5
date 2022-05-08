@@ -1,0 +1,54 @@
+<div class="main-panel">
+    <!-- BEGIN : Main Content-->
+    <div class="main-content">
+      <div class="content-wrapper"><div class="row">
+  
+  </div>
+  <!--Basic Table Starts-->
+  <section id="simple-table">
+  <div class="row">
+  <div class="col-sm-12">
+  <div class="card">
+    <div class="card-header">
+    
+      <h4 class="card-title"><b>List Reservation</b></h4>
+    </div>
+    <div class="card-content">
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Date Reservation</th>
+              <th>Num places</th>
+              <th>Num Reservation</th>
+              <th>Travels</th>
+              <th>Users</th>
+              
+              <th>Action</th>
+            
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let r of listreservation">
+              <td>{{r.reservationdate}}</td>
+              <td>{{r.numplaces}}</td>
+              <td>{{r.numreservation}}</td>
+              <td>{{r.travels}}</td>
+              <td>{{r.users}}</td>
+              
+
+              <td><a class="btn btn-danger" (click)="deletereservation(r.id)">Delete</a></td>
+              <td><a class="btn btn-warning" (click)="updatereservation(r.id)">Update</a></td>
+             
+          </tr>
+  
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </section>
+  <!--Basic Table Ends-->

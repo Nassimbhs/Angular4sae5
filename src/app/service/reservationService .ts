@@ -42,6 +42,11 @@ deletereservation (id: any):Observable<reservationtravel>  {
     return this._http.get<reservationtravel>(this.reservationUrl+"/retrieve-reservation"+id);
   }
 
+  getReservationByid (id: any):Observable<reservationtravel>  {
+
+    return this._http.get<reservationtravel>(this.reservationUrl+"/retrieve-reservation/"+id);
+  }
+
  
 
 
