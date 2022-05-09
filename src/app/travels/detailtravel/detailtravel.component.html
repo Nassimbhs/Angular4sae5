@@ -28,8 +28,13 @@
         <label><b>MissionType: </b></label>   {{travelmodel.missiontype}}
       </div>
 
+      <div style="font-size:x-large; color:orange">
+      <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false">
       
-       
+      </ngb-rating><br><br>
+     
+      </div>
+     <p><b>  Nb Rate:</b> {{ currentRate  }} </p>
   </div>
   
   

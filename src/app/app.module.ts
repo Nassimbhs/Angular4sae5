@@ -25,6 +25,9 @@ import { ReservationtravelComponent } from './reservationtravel/reservationtrave
 import { AddreservationComponent } from './travels/addreservation/addreservation.component';
 import { ListreservationComponent } from './reservationtravel/listreservation/listreservation.component';
 import { StatComponent } from './travels/stat/stat.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { MapComponent } from './map/map.component';
 
 const routes:Routes = [
 
@@ -69,6 +72,7 @@ const routes:Routes = [
     AddreservationComponent,
     ListreservationComponent,
     StatComponent,
+    MapComponent,
     
     
     
@@ -80,7 +84,9 @@ const routes:Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,HttpClientModule,
+    NgxPaginationModule,
     RouterModule.forRoot(routes),
+    NgbModule
     
   
     

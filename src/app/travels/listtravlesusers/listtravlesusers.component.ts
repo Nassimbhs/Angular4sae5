@@ -3,17 +3,19 @@ import { TravelModel } from 'src/app/modal/TravelModel';
 import { travelService } from 'src/app/service/travelService';
 import { Router } from '@angular/router';
 import { HttpEventType } from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
 @Component({
   selector: 'app-listtravlesusers',
   templateUrl: './listtravlesusers.component.html',
   styleUrls: ['./listtravlesusers.component.css']
 })
 export class ListtravlesusersComponent implements OnInit {
-
+  p : number=1;
   listTravels : any[];
   image: any;
   listImages : String[] = []
-
+  
+ 
   constructor(private _service:travelService,private router:Router, public listservice: travelService) { }
 
 

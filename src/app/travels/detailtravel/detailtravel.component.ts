@@ -9,7 +9,7 @@ import { travelService } from 'src/app/service/travelService';
   styleUrls: ['./detailtravel.component.css']
 })
 export class DetailtravelComponent implements OnInit {
-
+  currentRate : number =3;
   id: number;
   travelmodel: TravelModel;
   constructor(private route: ActivatedRoute,private router: Router,

@@ -8,6 +8,7 @@ import { ListtravlesusersComponent } from './travels/listtravlesusers/listtravle
 import { AddreservationComponent } from './travels/addreservation/addreservation.component';
 import { ListreservationComponent } from './reservationtravel/listreservation/listreservation.component';
 import { StatComponent } from './travels/stat/stat.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 const routes: Routes = [
   
    { path: "add-travel", component : AddtravelComponent},
