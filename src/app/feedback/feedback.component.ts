@@ -26,11 +26,10 @@ private location!: Location
    constructor(private feed : FeedbackService, private router:ActivatedRoute,private rout:Router) { }
 searchFeed!:feedback[];
 ListFeed!:feedback[];
+loader=true;
 setPage(i: number,event:any)
   {
-    
       event.preventDefault();
-   
    
     this.page=i;
     this.getlist();
@@ -42,16 +41,33 @@ setPage(i: number,event:any)
     
     this.id=this.router.snapshot.params['id'];
     this.feed.getFeedbackByid(this.id).subscribe();
+
+ 
+    this.Loading();
+     
+  }
+  Loading() {
+      this.loader=true;
+    
+    setTimeout (() => {
+        this.loader=false
+      }, 1800);
+ 
+     
+ 
   }
   
 getlist(){
  
  this.feed.getuser(this.page).subscribe(res=>{this.userlis =res
  
+
      this.ListFeed=res['content']
      
   this.pages=new Array(this.userlis['totalPages']);
+  
    });
+  
   
 }
 getFeedback(){

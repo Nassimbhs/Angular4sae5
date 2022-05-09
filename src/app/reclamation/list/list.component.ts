@@ -17,6 +17,7 @@ export class ListComponent implements OnInit {
   count!:CountType;
   dat:any;
   dd:any;
+ 
   events: any;
   constructor(private feed : ReclamationService, private router:ActivatedRoute,private rout:Router) { }
 
@@ -28,7 +29,7 @@ export class ListComponent implements OnInit {
   getlist(){
  
     this.feed.getrec().subscribe(res=>{this.userli =res
-      
+     
 
     });
    }

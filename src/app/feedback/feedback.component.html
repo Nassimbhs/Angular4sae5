@@ -7,11 +7,31 @@
         <a routerLink="/createFeed" routerLinkActive="active" class="nav-link"><p style="text-align-last: center;color: blue;">Create Feedback</p></a></li>
 
 </ul>
+<table  class="table table-striped table-hover " style="text-align-last: center;" >
+    <tr  >
+        <td>
+            <div>
+              
+            <circle-progress *ngIf="loader"
+[percent]="100"
+[radius]="100"
+[outerStrokeWidth]="16"
+[innerStrokeWidth]="8"
+[outerStrokeColor]="'#78C000'"
+[innerStrokeColor]="'#C7E596'"
+[animation]="true"
+[animationDuration]="1000"
+></circle-progress>
+</div>
+        </td>
+    </tr>
+    
+</table>
+ 
  
 <input #query (keyup)="search(query.value)" class="form-control" type="text" style="width: 50%; height: 5%; align-content: center;" class="float-right" placeholder="Search...">
- 
 
- <table class="table table-striped table-hover "  style="text-align-last: center;"  >
+ <table *ngIf="!loader" class="table table-striped table-hover "  style="text-align-last: center;"  >
      
 <thead class="thead-dark" >
     <th></th>

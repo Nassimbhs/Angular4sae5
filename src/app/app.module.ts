@@ -37,6 +37,7 @@ import { UpdateReclamationComponent } from './reclamation/update-reclamation/upd
 import { OrderModule } from 'ngx-order-pipe';
 import { CreateCalendarComponent } from './calender/create-calendar/create-calendar.component';
 import { ProgressBarModule } from 'angular-progress-bar';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 const routes:Routes = [
   { path: 'cars' , component:CarComponent },
   { path: 'chat' , component:ChatComponent },
@@ -98,7 +99,16 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     FullCalendarModule,
     ProgressBarModule,
     RouterModule.forRoot(routes),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
