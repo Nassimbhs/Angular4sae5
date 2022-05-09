@@ -24,6 +24,7 @@ import { ListtravlesusersComponent } from './travels/listtravlesusers/listtravle
 import { ReservationtravelComponent } from './reservationtravel/reservationtravel.component';
 import { AddreservationComponent } from './travels/addreservation/addreservation.component';
 import { ListreservationComponent } from './reservationtravel/listreservation/listreservation.component';
+import { StatComponent } from './travels/stat/stat.component';
 
 const routes:Routes = [
 
@@ -67,6 +68,7 @@ const routes:Routes = [
     ReservationtravelComponent,
     AddreservationComponent,
     ListreservationComponent,
+    StatComponent,
     
     
     

@@ -19,6 +19,13 @@ export class travelService {
         return this._http.get<TravelModel[]>(this.travelsUrl+"/retrieve-all-travels");
     }
 
+    getTravelByMissiontype() {
+      return this._http.get<TravelModel[]>(this.travelsUrl + '/getTravelByMissiontype');
+    }
+
+    getTravelByNumber() {
+      return this._http.get<TravelModel[]>(this.travelsUrl + '/getTravelByNumber');
+    }
 
 
 addTravel(travel:any){

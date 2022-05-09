@@ -15,6 +15,11 @@ export class carService {
         return this._http.get<string[]>(this.baseUrl+"/retrieve-all-cars");
     }
 
+    odel() {
+        return this._http.get<Car[]>(this.baseUrl + '/getCarByModel');
+      }
+
+      
     getCarById(id:any) : Observable<Car>{
         return this._http.get<Car>(this.baseUrl+"/getCarById/"+id);
     }

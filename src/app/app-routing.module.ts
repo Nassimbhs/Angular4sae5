@@ -7,6 +7,7 @@ import { UpdatetravelComponent } from './travels/updatetravel/updatetravel.compo
 import { ListtravlesusersComponent } from './travels/listtravlesusers/listtravlesusers.component';
 import { AddreservationComponent } from './travels/addreservation/addreservation.component';
 import { ListreservationComponent } from './reservationtravel/listreservation/listreservation.component';
+import { StatComponent } from './travels/stat/stat.component';
 const routes: Routes = [
   
    { path: "add-travel", component : AddtravelComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
    { path: "listreservation", component  : ListreservationComponent },
    { path: "detailtravel/:id", component : DetailtravelComponent  },
    { path: "update-travel/:id", component : UpdatetravelComponent},
- 
+   { path: "stat", component : StatComponent},
+
    { path: "", redirectTo : "travels", pathMatch:"full"} 
 ];
 
