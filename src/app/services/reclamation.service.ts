@@ -13,6 +13,11 @@ export class ReclamationService {
     return this.http.get<any>("http://localhost:8090/SpringMVC/task/"+id);
     
   }
+  public getAlltask(){
+    
+    return this.http.get<any>("http://localhost:8090/SpringMVC/alltask/");
+
+  }
   public getListOfUser(){
     return this.http.get<any>("http://localhost:8090/SpringMVC/getReclbyUser");
     

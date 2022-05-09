@@ -31,10 +31,12 @@ import { ListComponent } from './reclamation/list/list.component';
 import { CreateReclamationComponent } from './reclamation/create-reclamation/create-reclamation.component';
 import { CalenderComponent } from './calender/calender.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
- import { CreateEventsComponent } from './events/create-events/create-events.component';
+
 import { SearchCompanyComponent } from './search-Company/search-company.component';
 import { UpdateReclamationComponent } from './reclamation/update-reclamation/update-reclamation.component';
 import { OrderModule } from 'ngx-order-pipe';
+import { CreateCalendarComponent } from './calender/create-calendar/create-calendar.component';
+import { ProgressBarModule } from 'angular-progress-bar';
 const routes:Routes = [
   { path: 'cars' , component:CarComponent },
   { path: 'chat' , component:ChatComponent },
@@ -54,7 +56,8 @@ const routes:Routes = [
   { path: 'statistique' , component:StatistiqueComponent },
   { path: 'Calendrier/:id' , component:CalenderComponent },
   { path: 'create-reclamation' , component: CreateReclamationComponent},
-  { path: 'create-events' , component: CreateEventsComponent},
+  { path: 'reclam/:id' , component:ListComponent },
+  { path: 'create-Calendar' , component: CreateCalendarComponent},
 ];
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -80,9 +83,10 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ListComponent,
     CreateReclamationComponent,
     CalenderComponent,
-    CreateEventsComponent,
+  
     SearchCompanyComponent,
-       UpdateReclamationComponent
+       UpdateReclamationComponent,
+       CreateCalendarComponent
   ],
   imports: [
     NgChartsModule,
@@ -92,6 +96,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BrowserModule,
     AppRoutingModule,
     FullCalendarModule,
+    ProgressBarModule,
     RouterModule.forRoot(routes),
     ModalModule.forRoot()
   ],

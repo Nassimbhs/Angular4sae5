@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { feedback } from '../Model/feedback';
 import { company } from '../Model/company';
 import { calendar } from '../Model/calender';
+import { calendarevent } from '../Model/calendarevent';
 @Injectable({
   providedIn: 'root'
 })
@@ -43,5 +44,8 @@ return this.http.get<feedback>("http://localhost:8090/SpringMVC/getByid/"+id);
       }
       Paging(id :number){
         return this.http.get<feedback>("http://localhost:8090/SpringMVC/list?page="+id);
+          }
+          AddCalendar(id:number,cal : calendar){
+            return this.http.post<calendar>("http://localhost:8090/SpringMVC/calendars/add/"+id,cal);
           }
 }

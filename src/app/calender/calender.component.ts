@@ -5,6 +5,7 @@ import { FeedbackService } from '../services/feedback.service';
 import { user } from '../Model/user';
 import { calendar } from '../Model/calender';
 import { Router,ActivatedRoute } from '@angular/router';
+import { calendarevent } from '../Model/calendarevent';
  
 
 @Component({
@@ -17,7 +18,7 @@ export class CalenderComponent implements OnInit {
   title:any;
   calendarOptions!: CalendarOptions ;
   Cal :calendar =new calendar();
-  
+
   
   public dat : any=[];
   
