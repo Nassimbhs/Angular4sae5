@@ -22,6 +22,7 @@ export class DetailComponent implements OnInit {
     this.carService.getCarById(this.id).subscribe( data => {
       this.car = data;
     });
+    
   }
 
 }

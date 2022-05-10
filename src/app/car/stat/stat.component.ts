@@ -38,7 +38,18 @@ export class StatComponent implements OnInit {
               data: this.listCarModelNumber,
               
               backgroundColor: [
-                'rgb(252, 3, 74)',
+                'rgb(252, 1, 101)',
+                'rgb(120, 52, 170)',
+                'rgb(125, 193, 74)',
+                'rgb(10, 4, 74)',
+                'rgb(25, 5, 74)',
+                'rgb(50, 6, 74)',
+                'rgb(60, 7, 74)',
+                'rgb(05, 8, 74)',
+                'rgb(70, 9, 74)',
+                'rgb(90, 10, 74)',
+                'rgb(100, 11, 74)',
+
               ],
              
               borderWidth: 1

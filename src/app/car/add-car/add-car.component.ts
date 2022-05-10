@@ -24,7 +24,6 @@ export class AddCarComponent implements OnInit {
   constructor(
     private c:carService,
     private _router:Router,
-    private httpClient: HttpClient,
     private imagenService: ImagenService,
     private spinner: NgxSpinnerService) { }
 

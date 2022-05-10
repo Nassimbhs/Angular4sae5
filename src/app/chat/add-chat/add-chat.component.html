@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 <div class="wrapper">
   <div class="main-panel">
@@ -302,14 +303,14 @@
             </div>
           </section>
           <section class="chat-app-form bg-blue-grey bg-lighten-5">
-
+            
             <form class="chat-app-input row mt-2" (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
               <fieldset class="form-group position-relative has-icon-left col-lg-10 col-8 m-0 px-3">
                 <div class="form-control-position">
                   <i class="icon-emoticon-smile"></i>
                 </div>
-                <input type="text" class="form-control" name="message" id="input-message" ngModel
-                  placeholder="Type your message">
+                <input type="text" class="form-control" name="message" id="input-message"
+                  placeholder="Type your message"[(ngModel)]="chat.message" ngModel>
                 <div class="form-control-position control-position-right">
                   <i class="ft-image mr-1"></i>
                 </div>
@@ -328,15 +329,6 @@
       </div>
     </div>
     <!-- END : End Main Content-->
-
-    <!-- BEGIN : Footer-->
-    <footer class="footer footer-static footer-light">
-      <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2019 <a
-            href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink" target="_blank"
-            class="text-bold-800 primary darken-2">PIXINVENT </a>, All rights reserved. </span></p>
-    </footer>
-    <!-- End : Footer-->
-
   </div>
 </div>
 <!-- ////////////////////////////////////////////////////////////////////////////-->

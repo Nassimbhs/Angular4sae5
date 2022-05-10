@@ -1,4 +1,3 @@
-import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,7 +15,7 @@ import { ListChatComponent } from './chat/list-chat/list-chat.component';
 import { UpdateChatComponent } from './chat/update-chat/update-chat.component';
 import { DeleteChatComponent } from './chat/delete-chat/delete-chat.component';
 import { AddChatComponent } from './chat/add-chat/add-chat.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { DetailComponent } from './car/detail/detail.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -26,7 +25,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StatComponent } from './car/stat/stat.component';
 import { FrontListCarComponent } from './front/front-list-car/front-list-car.component';
 import { FrontDetailCarComponent } from './front/front-detail-car/front-detail-car.component';
-
+import { DatePipe } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
+import { PaypalComponent } from './front/paypal/paypal.component';
+import { InvoiceComponent } from './front/invoice/invoice.component';
+import {NgxPayPalModule} from 'ngx-paypal';
+import { PaymentComponent } from './front/payment/payment.component';
+import { NgxStripeModule } from 'ngx-stripe';
+import { ModalComponent } from './front/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +54,12 @@ import { FrontDetailCarComponent } from './front/front-detail-car/front-detail-c
     DetailComponent,
     StatComponent,
     FrontListCarComponent,
-    FrontDetailCarComponent
+    FrontDetailCarComponent,
+    PaypalComponent,
+    InvoiceComponent,
+    PaymentComponent,
+    ModalComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -58,8 +71,15 @@ import { FrontDetailCarComponent } from './front/front-detail-car/front-detail-c
     Ng2OrderModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
+    ToastrModule.forRoot(),
+    NgbModule,
+    NgbModalModule,
+    ReactiveFormsModule,
+    NgxPayPalModule,
+    NgxStripeModule.forRoot('pk_test_51KX1K0E0eqielpuruy9lPD5F6fKFhdjJzjXYQBVQcQ0G6PHS0McLq4R0oXlOGl7Q92uz03GCuS6Y9AvMyHg9FQ96008kqDGUrM'),
   ],
-  providers: [],
+  entryComponents: [ModalComponent],
+  providers: [ DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

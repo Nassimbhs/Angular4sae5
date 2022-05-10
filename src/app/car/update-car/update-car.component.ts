@@ -40,6 +40,7 @@ export class UpdateCarComponent implements OnInit {
         this.car = res
       });
   }
+  
   updateCar(){
     this.cs.updateCar(this.car).subscribe(()=>this.router.navigateByUrl("/listCar"));
     console.log("update : "+ this.car)
