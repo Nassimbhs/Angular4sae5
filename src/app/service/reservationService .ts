@@ -32,6 +32,8 @@ deletereservation (id: any):Observable<reservationtravel>  {
   
   }
 
+
+
   updatereservationtravel (value: any):Observable<Object>  {
 
     return this._http.put(this.reservationUrl+"/modify-reservation",value);

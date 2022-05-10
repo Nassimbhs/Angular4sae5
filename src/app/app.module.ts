@@ -26,8 +26,14 @@ import { AddreservationComponent } from './travels/addreservation/addreservation
 import { ListreservationComponent } from './reservationtravel/listreservation/listreservation.component';
 import { StatComponent } from './travels/stat/stat.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {NgxPaginationModule} from 'ngx-pagination';
+
 import { MapComponent } from './map/map.component';
+
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 const routes:Routes = [
 
@@ -85,6 +91,9 @@ const routes:Routes = [
     AppRoutingModule,
     FormsModule,HttpClientModule,
     NgxPaginationModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    
     RouterModule.forRoot(routes),
     NgbModule
     

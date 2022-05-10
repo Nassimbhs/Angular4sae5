@@ -12,20 +12,25 @@ import { Router } from '@angular/router';
 })
 export class ListreservationComponent implements OnInit {
   listreservation : any[];
-
+  numplaces: any;
+  p: number = 1;
   constructor(private _service:reservationService,private router:Router) { }
 
   ngOnInit(): void {
     this.getreservation();
+
    
   }
 
   getreservation(){
-    this._service.getreservation().subscribe(
+    this._service.getreservation()
+    .subscribe(
     res=>{console.log(res);
     this.listreservation=res}
     );
     }
+
+  
     deletereservation(id:any) {
       this._service.deletereservation(id).subscribe(
         res=>{
@@ -38,6 +43,25 @@ export class ListreservationComponent implements OnInit {
           
      }
 
-    
+
+     Search(){
+       if(this.numplaces = "") {
+         this.ngOnInit();
+
+       }else{
+
+         this.listreservation = this.listreservation.filter(res => {
+           return res.reservationdate.toLocaleLowerCase().match(this.numplaces.toLocaleLowerCase());
+         })
+       }
+     }
+     key: string ='date';
+     reverse:boolean = false;
+
+           sort(key){
+             this.key = key;
+             this.reverse =!this.reverse;
+         
+       }
   
 }
