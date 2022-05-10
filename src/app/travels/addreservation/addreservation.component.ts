@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./addreservation.component.css']
 })
 export class AddreservationComponent implements OnInit {
-
+  
  
   reservation : reservationtravel=new reservationtravel();
   constructor(private r:reservationService, private _router:Router) { }

@@ -25,6 +25,8 @@ export class DetailtravelComponent implements OnInit {
         console.log(data)
         this.travelmodel = data;
       }, error => console.log(error));
+
+      this.t.loadImage;
   }
 
   list(){
