@@ -33,6 +33,10 @@ import { MapComponent } from './map/map.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PdfMakeWrapper } from 'pdfmake-wrapper';
+import * as pdfFonts from "pdfmake/build/vfs_fonts";
+
+PdfMakeWrapper.setFonts(pdfFonts);
 
 
 const routes:Routes = [
@@ -93,7 +97,6 @@ const routes:Routes = [
     NgxPaginationModule,
     Ng2SearchPipeModule,
     Ng2OrderModule,
-    
     RouterModule.forRoot(routes),
     NgbModule
     

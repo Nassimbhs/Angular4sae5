@@ -3,6 +3,7 @@ import { TravelModel } from 'src/app/modal/TravelModel';
 import { travelService } from 'src/app/service/travelService';
 import { Router } from '@angular/router';
 import { HttpEventType } from '@angular/common/http';
+
 @Component({
   selector: 'app-listtravel',
   templateUrl: './listtravel.component.html',
@@ -46,9 +47,11 @@ gettravel(){
   
 
   deleteTravel(id:any) {
-    this._service.deleteTravel(id).subscribe(
+    this._service.deleteTravel(id)
+    .subscribe(
       res=>{
         this.gettravel();
+
       });
     }
    updateTravel(id:Number) {

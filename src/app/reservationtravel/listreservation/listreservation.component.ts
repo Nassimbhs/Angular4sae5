@@ -3,7 +3,8 @@ import { reservationtravel } from 'src/app/modal/reservationtravel';
 import { reservationService } from 'src/app/service/reservationService '; 
 
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2';
+import { PdfMakeWrapper,  Txt } from 'pdfmake-wrapper';
 
 @Component({
   selector: 'app-listreservation',
@@ -17,7 +18,9 @@ export class ListreservationComponent implements OnInit {
   constructor(private _service:reservationService,private router:Router) { }
 
   ngOnInit(): void {
+    Swal.fire('Thank you...', 'You submitted succesfully!', 'success');
     this.getreservation();
+    
 
    
   }
@@ -43,6 +46,8 @@ export class ListreservationComponent implements OnInit {
           
      }
 
+    
+
 
      Search(){
        if(this.numplaces = "") {
@@ -50,11 +55,15 @@ export class ListreservationComponent implements OnInit {
 
        }else{
 
-         this.listreservation = this.listreservation.filter(res => {
-           return res.reservationdate.toLocaleLowerCase().match(this.numplaces.toLocaleLowerCase());
-         })
+      this.listreservation = this.listreservation.filter(res => {
+      return res.reservationdate.toLocaleLowerCase().match(this.numplaces.toLocaleLowerCase());
+     })
        }
      }
+
+
+
+
      key: string ='date';
      reverse:boolean = false;
 
@@ -63,5 +72,17 @@ export class ListreservationComponent implements OnInit {
              this.reverse =!this.reverse;
          
        }
+
+
+       downloadPDF(){
+        const pdf = new PdfMakeWrapper();
+
+        pdf.add(
+          new Txt('hello world').bold().italics().end
+         
+        );
+        pdf.create().open();
+      
+      }
   
 }
