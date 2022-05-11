@@ -12,23 +12,28 @@ export class DetailtravelComponent implements OnInit {
   currentRate : number =3;
   id: number;
   travelmodel: TravelModel;
+  image:string
+  images:any
+ 
   constructor(private route: ActivatedRoute,private router: Router,
     private t:travelService)  { }
-    
-   
-
   ngOnInit(): void {
+   
     this.travelmodel = new TravelModel();
     this.id = this.route.snapshot.params['id'];
     this.t.getTravelByid(this.id)
       .subscribe(data => {
         console.log(data)
         this.travelmodel = data;
+        this.t.loadImage(this.travelmodel.image.idImage).subscribe
+        ((image:any) => {
+          this.images = ('data:'+ image.type +';base64,'+ image.image)
+          console.log(this.images);
+        })
       }, error => console.log(error));
-
-      this.t.loadImage;
-  }
-
+    
+      }
+    
   list(){
     this.router.navigate(['listreservation']);
   }
