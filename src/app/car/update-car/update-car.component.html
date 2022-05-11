@@ -27,47 +27,41 @@
     <div class="card-body">
       <div class="px-3">
 
-        <form class="form">
-          <div class="form-actions top clearfix">
-            <div class="buttons-group float-right">
-              <button type="button" class="btn btn-raised btn-info mr-1">Action 1</button>
-              <button type="button" class="btn btn-raised btn-danger mr-1">Action 2</button>
-              <button type="button" class="btn btn-raised btn-success">Action 3</button>
-            </div>
-          </div>
-
+        <form class="form" #f="ngForm">
+          
           <div class="row justify-content-md-center">
             <div class="col-md-6">
               <div class="form-body">
                 <div class="row">
                   <div class="form-group col-12 mb-2">
-                    <label for="eventRegInput1">Car Model</label>
-                    <input type="text" [(ngModel)]="car.carModel" id="eventRegInput1" class="form-control" placeholder="Car model" name="carModel">
+                    <label for="eventRegInput1">Car Model<span class="star">*</span></label>
+                    <input type="text" [(ngModel)]="car.carModel" id="eventRegInput1" class="form-control"
+                      placeholder="name" name="fullname" #m="ngModel" required minlength="2">
+                      <div class="alert alert-danger" *ngIf="m.invalid && m.touched">  
+                        <div *ngIf="m.errors.required">Car Model is a required field </div>
+                        <div *ngIf="m.errors.minlength">Car Model minimum length is equal to 2  </div>
+
+                      </div>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="form-group col-12 mb-2">
-                    <label for="eventRegInput2">Car status</label>
-                    <input type="text" [(ngModel)]="car.carStatus" id="eventRegInput2" class="form-control" placeholder="Car status" name="carStatus">
+                    <label for="eventRegInput3">Registration number<span class="star">*</span></label>
+                    <input type="text"  #mat="ngModel" required [(ngModel)]="car.matricule" id="eventRegInput3" class="form-control"
+                      placeholder="Exemple : 222 TUN 2022" name="company">
+                      <div class="alert alert-danger" *ngIf="mat.invalid && mat.touched">  
+                        <div *ngIf="mat.errors.required">Registration number is a required field </div>
+                      </div>
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="form-group col-12 mb-2">
-                    <label for="eventRegInput3">Matricule</label>
-                    <input type="text" [(ngModel)]="car.matricule" id="eventRegInput3" class="form-control" placeholder="Matricule" name="matricule">
-                  </div>
-                </div>
-
-                <div class="container row">
                   <div class="col-md-12">
-                    <h1>Upload Image</h1>
+                    <label for="eventRegInput3">Upload Image<span class="star">*</span></label>
                   </div>
                 </div>
 
-                <hr />
-                
               
                   <div class="custom-file">
                       <input type="file" class="custom-file-input" id="imagen" #imagenInputFile
@@ -77,80 +71,56 @@
                   <div *ngIf="imagen" class="mt-5">
                       <h5>Image preview:</h5>
                       <div>
-                          <img class="image-thumbnail" style="max-width: 100px" [src]="imagenMin" [(ngModel)]="car.image.imagenUrl" [ngModelOptions]="{standalone: true}" name ="image" ngDefaultControl>
+                          <img class="image-thumbnail" style="max-width: 100px" [src]="imagenMin">
                       </div>
                   </div>
                   <div class="form-group d-flex justify-content-between my-3">
                       <button class="btn btn-outline-danger" [disabled]="!imagen" (click)="reset()"><i class="fas fa-sync-alt"></i> Reset</button>
                   </div>
 
-
                 <div class="row">
                   <div class="form-group col-12 mb-2">
-                    <label for="eventRegInput5">Price</label>
-                    <input type="number"  [(ngModel)]="car.price" id="eventRegInput5" class="form-control" name="price" placeholder="Price">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-group col-12 mb-2">
-                    <label for="eventRegInput5">Rating</label>
-                    <input type="number"  [(ngModel)]="car.rating" id="eventRegInput5" class="form-control" name="rating" placeholder="Rating">
-                  </div>
-                </div>
-                
-                <div class="row">
-                  <div class="form-group col-12 mb-2">
-                    <label for="eventRegInput5">Seats</label>
-                    <input type="number"  [(ngModel)]="car.seats" id="eventRegInput5" class="form-control" name="seats" placeholder="Seats number">
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="form-group col-12 mb-2">
-                    <label for="eventRegInput5">Gearbox</label>
-                    <input type="text"  [(ngModel)]="car.gearbox" id="eventRegInput5" class="form-control" name="gearbox" placeholder="Gearbox type">
-                  </div>
-                </div>
-
-                
-                <div class="row">
-                  <div class="form-group col-12 mb-2">
-                    <label for="eventRegInput5">Start Date Location</label>
-                    <input type="date"  [(ngModel)]="car.startdatelocation" id="eventRegInput5" class="form-control" name="startdatelocation">
-                  </div>
-                </div>
-                
-                <div class="row">
-                  <div class="form-group col-12 mb-2">
-                    <label for="eventRegInput5">End Date Location</label>
-                    <input type="date"  [(ngModel)]="car.enddatelocation" id="eventRegInput5" class="form-control" name="enddatelocation">
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="form-group col-12 mb-2">
-                    <label for="eventRegInput5">day</label>
-                    <input type="number"  [(ngModel)]="car.day" id="eventRegInput5" class="form-control" name="days" placeholder="Day">
-                  </div>
-                </div>
-
-                
-
-                <div class="row">
-                  <div class="form-group col-12 mb-2">
-                    <label>Existing Customer</label>
-                    <div class="input-group">
-                      <div class="custom-control custom-radio d-inline-block ml-1">
-                        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline1">Yes</label>
+                    <label for="eventRegInput5">Price <span class="star">*</span></label>
+                    <input type="number" [(ngModel)]="car.price" id="eventRegInput5" class="form-control"
+                      name="price" #price="ngModel" required placeholder="Price">
+                      <div class="alert alert-danger" *ngIf="price.invalid && price.touched">  
+                        <div *ngIf="price.errors.required">Price is a required field </div>
                       </div>
-                      <div class="custom-control custom-radio d-inline-block ml-2">
-                        <input type="radio" id="customRadioInline2" checked name="customRadioInline1" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline2">No</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-12 mb-2">
+                    <label for="eventRegInput5">Rating <span class="star">*</span></label>
+                    <input type="number" #rating="ngModel" required [(ngModel)]="car.rating" id="eventRegInput5" class="form-control"
+                      name="rating" placeholder="Rating">
+                      <div class="alert alert-danger" *ngIf="rating.invalid && rating.touched">  
+                        <div *ngIf="rating.errors.required">Rating is a required field </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-12 mb-2">
+                    <label for="eventRegInput5">Seats<span class="star">*</span></label>
+                    <input type="number" [(ngModel)]="car.seats" id="eventRegInput5" class="form-control"
+                      name="seats"  #seats="ngModel" required placeholder="Seats">
+                      <div class="alert alert-danger" *ngIf="seats.invalid && seats.touched">  
+                        <div *ngIf="seats.errors.required">Seats is a required field </div>
                       </div>
                     </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-12 mb-2">
+                    <label for="eventRegInput5">Gearbox<span class="star">*</span></label>
+                    <input type="text" #gearbox="ngModel" [(ngModel)]="car.gearbox" id="eventRegInput5" class="form-control"
+                      name="gearbox" placeholder="Gearbox Automatic or Manual">
+                      <div class="alert alert-danger" *ngIf="gearbox.invalid && gearbox.touched">  
+                        <div *ngIf="gearbox.errors.required">Gearbox is a required field </div>
+                      </div>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -161,7 +131,7 @@
         
           <div class="form-actions clearfix">
             <div class="buttons-group float-left">
-              <button type="button" class="btn btn-raised btn-warning mr-1">
+              <button type="button" class="btn btn-raised btn-warning mr-1" (click)="f.resetForm()">
                 <i class="ft-x"></i> Cancel
               </button>
               <button type="button" class="btn btn-raised btn-primary mr-1" (click)="updateCar()">
