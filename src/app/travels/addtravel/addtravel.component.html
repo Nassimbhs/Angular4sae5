@@ -37,7 +37,7 @@
                   <label class="col-md-3 label-control" for="timesheetinput2"><b>Duration:</b></label>
                   <div class="col-md-9">
                     <div class="position-relative has-icon-left">
-                      <input type="text" id="timesheetinput2" class="form-control" [(ngModel)]="travel.duration" placeholder="duration" name="duration">
+                      <input type="text" id="timesheetinput2" class="form-control" [(ngModel)]="travel.duration" placeholder="duration" name="duration" >
                       <div class="form-control-position">
                         <i class="fa fa-briefcase"></i>
                       </div>
@@ -64,7 +64,7 @@
                     <label class="col-md-3 label-control" for="timesheetinput3"><b>EndDate</b></label>
                     <div class="col-md-9">
                       <div class="position-relative has-icon-left">
-                        <input type="date" id="timesheetinput3" class="form-control" [(ngModel)]="travel.enddate" name="enddate">
+                        <input type="date" id="timesheetinput3" class="form-control" [(ngModel)]="travel.enddate" name="enddate" >
                         <div class="form-control-position">
                             <i class="ft-clock"></i>
                         </div>
@@ -72,25 +72,28 @@
                     </div>
                   </div>
 
-                  
-
-                  
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="timesheetinput3"><b>MissionType</b></label>
+                    <div class="col-md-9">
+                      <div class="position-relative has-icon-left">
+                    <select id="projectinput5" name="missiontype" class="form-control" [(ngModel)]="travel.missiontype">
+                      <option value="none" selected="" disabled="">MissionType</option>
+                      <option value="insepection">insepection</option>
+                      <option value="training_mission">training_mission</option>
+                      <option value="Alternation">Alternation</option>
+                      <option value="Insertion_contact">Insertion_contact</option>
+                
+                    </select>
+                  </div>
+                    </div>
+                  </div>
+                 
 
 
 
                
 
-                <div class="form-group row">
-                    <label class="col-md-3 label-control" for="timesheetinput1"><b>MissionType</b></label>
-                    <div class="col-md-9">
-                      <div class="position-relative has-icon-left">
-                        <input type="text" id="timesheetinput1" class="form-control" [(ngModel)]="travel.missiontype" placeholder="missiontype" name="missiontype">
-                        <div class="form-control-position">
-                          <i class="ft-user"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              
 
                   <div class="form-group row">
                     <label class="col-md-3 label-control"><b>Select File: </b></label>

@@ -4,6 +4,7 @@ import { Image } from 'src/app/modal/Image';
 import { travelService } from 'src/app/service/travelService';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-addtravel',
   templateUrl: './addtravel.component.html',
@@ -15,7 +16,10 @@ export class AddtravelComponent implements OnInit {
   uploadedImage: File;
   image: any;
   response: any
-  constructor(private t:travelService, private _router:Router) { }
+ 
+  constructor(private t:travelService,private _router:Router) {
+
+   }
 
   addTravel(){
     console.log("this is start date :"+this.travel.startdate);
@@ -37,13 +41,18 @@ export class AddtravelComponent implements OnInit {
      )
     } 
      )
-}
+     
+} 
+      
   onImageUpload(event: any) {
     this.uploadedImage = event.target.files[0];
   }
 
   ngOnInit(): void {
+   
   }
+
+
  
     
   

@@ -39,7 +39,7 @@ export class StatComponent implements OnInit {
               data: this.listTravelNumber,
               
               backgroundColor: [
-                'rgb(252, 3, 74)',
+                '#dc3545',
               ],
              
               borderWidth: 1
