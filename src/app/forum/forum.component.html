@@ -1,0 +1,110 @@
+<app-navbar></app-navbar>
+
+<div class="main-panel">
+  <!-- BEGIN : Main Content-->
+  <div class="main-content">
+    <app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
+    <div class="content-wrapper">
+      <!--Statistics cards Starts-->
+      <h4>Select a topic</h4>
+      <mat-form-field appearance="fill">
+        <mat-select (selectionChange)="selectChange($event.value)">
+          <mat-option *ngFor="let topic of topics" [value]="topic">
+            {{topic.nameTopic}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-button color="primary" [disabled]="isTopicEmpty" (click)="open(content)">add new post</button>
+      <button mat-button color="primary" (click)="open(contentTopic)">add new topic</button>
+      <button mat-icon-button color="primary" [disabled]="isEmptyData"
+        aria-label="Example icon button with a heart icon" (click)="onDeletePosts()">
+        <mat-icon>restore_from_trash</mat-icon>
+      </button>
+
+      <form [formGroup]="selectTopicForm" (ngSubmit)="deleteSelectedTopics(selectTopicForm.value)">
+        <mat-form-field appearance="fill">
+          <mat-label>Topics</mat-label>
+          <mat-select formControlName="topics" multiple>
+            <mat-option *ngFor="let topic of topics" [value]="topic">{{topic.nameTopic}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button class="btn btn-outline-dark bt" type="submit" [disabled]="!selectTopicForm.valid">Delete selected
+          Topics</button>
+          <br>
+          <input type="text" placeholder="search2 subject" class="form-control round" [(ngModel)]="subject" (ngModelChange)="search2()" />
+<br>
+        <mat-icon>thumb_up_alt</mat-icon>{{likedPosts}}
+        <mat-icon>thumb_down_alt</mat-icon>{{dislikedPosts}}
+      </form>
+
+      <ng2-smart-table (createConfirm)="addPost($event)" (editConfirm)="onEditPost($event)"
+        (deleteConfirm)="onDeleteConfirm($event)" [settings]="settings" [source]="data" matSort></ng2-smart-table>
+      <div class="d-flex justify-content-center">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Add new Post</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="addPostForm" (ngSubmit)="addPost(addPostForm.value)">
+            <div class="mb-3">
+              <label for="subject">Subject</label><span class="required">*</span>
+              <div class="input-group">
+                <input id="subject" type="text" formControlName="subject" class="form-control" name="subject">
+
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="content">Content</label><span class="required">*</span>
+              <div class="input-group">
+                <input id="content" formControlName="content" type="text" class="form-control" name="content">
+
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="comments">Comment</label><span class="required">*</span>
+              <div class="input-group">
+                <input id="comments" type="text" formControlName="comments"
+                  class="form-control ng-untouched ng-pristine ng-valid" name="comments">
+
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="typeahead-focus">Did you like this post ? </label>
+              <mat-radio-group formControlName="likes" aria-label="Select an option">
+                <mat-radio-button [value]="true">Yes</mat-radio-button>
+                <mat-radio-button [value]="false">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <button class="btn btn-outline-dark" type="submit" [disabled]="!addPostForm.valid"
+              (click)="modal.close('Save click')">Add Post</button>
+          </form>
+        </div>
+
+      </ng-template>
+      <ng-template #contentTopic let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Add new Topic</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="addTopicForm" (ngSubmit)="addTopic(addTopicForm.value)">
+            <div class="mb-3">
+              <label for="nameTopic">Name of Topic</label><span class="required">*</span>
+              <div class="input-group">
+                <input formControlName="nameTopic" id="nameTopic" type="text" class="form-control" name="nameTopic">
+              </div>
+            </div>
+            <button class="btn btn-outline-dark" type="submit" [disabled]="!addTopicForm.valid"
+              (click)="modal.close('Save click')">Add Topic</button>
+
+          </form>
+        </div>
+
+      </ng-template>
+    </div>
+  </div>
+  <!-- END : End Main Content-->

@@ -1,0 +1,58 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+
+
+  .bt {
+    margin-right: 50%;
+  }
+  button {
+    margin: 25px 5px 20px 20px;
+  }
+  
+  /* For Round Button*/
+  .e-plus-icon::before {
+    content: '\e823';
+  }
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  #loader {
+    color: #008cff;
+    height: 40px;
+    width: 30%;
+    position: absolute;
+    font-family:  'Helvetica Neue','calibiri';
+    font-size:16px;
+    top: 45%;
+    left: 45%;
+  }
