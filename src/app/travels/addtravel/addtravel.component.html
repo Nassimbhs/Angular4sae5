@@ -9,7 +9,7 @@
 <section id="basic-form-layouts">
   <div class="row">
     <div class="col-sm-12">
-      <div class="content-header"><b>Add Travel</b></div>
+     
     </div>
   </div>
  
@@ -19,11 +19,11 @@
         
         <div class="card-body">
           <div class="px-3">
-
+ <h2><b>Add Travel</b></h2><br><br>
             <form class="form form-horizontal form-bordered">
               <div class="form-body">
                 <div class="form-group row">
-                  <label class="col-md-3 label-control" for="timesheetinput1">Destination</label>
+                  <label class="col-md-3 label-control" for="timesheetinput1"><b>Destination:</b></label>
                   <div class="col-md-9">
                     <div class="position-relative has-icon-left">
                       <input type="text" id="timesheetinput1" class="form-control" [(ngModel)]="travel.destination" placeholder="destination" name="destination">
@@ -34,7 +34,7 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-md-3 label-control" for="timesheetinput2">Duration</label>
+                  <label class="col-md-3 label-control" for="timesheetinput2"><b>Duration:</b></label>
                   <div class="col-md-9">
                     <div class="position-relative has-icon-left">
                       <input type="text" id="timesheetinput2" class="form-control" [(ngModel)]="travel.duration" placeholder="duration" name="duration">
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="form-group row">
-                  <label class="col-md-3 label-control" for="timesheetinput3">StartDate</label>
+                  <label class="col-md-3 label-control" for="timesheetinput3"><b>StartDate</b></label>
                   <div class="col-md-9">
                     <div class="position-relative has-icon-left">
                       <input type="date" id="timesheetinput3" class="form-control" [(ngModel)]="travel.startdate" name="startdate">
@@ -61,7 +61,7 @@
                 
 
                 <div class="form-group row">
-                    <label class="col-md-3 label-control" for="timesheetinput3">EndDate</label>
+                    <label class="col-md-3 label-control" for="timesheetinput3"><b>EndDate</b></label>
                     <div class="col-md-9">
                       <div class="position-relative has-icon-left">
                         <input type="date" id="timesheetinput3" class="form-control" [(ngModel)]="travel.enddate" name="enddate">
@@ -81,7 +81,7 @@
                
 
                 <div class="form-group row">
-                    <label class="col-md-3 label-control" for="timesheetinput1">MissionType</label>
+                    <label class="col-md-3 label-control" for="timesheetinput1"><b>MissionType</b></label>
                     <div class="col-md-9">
                       <div class="position-relative has-icon-left">
                         <input type="text" id="timesheetinput1" class="form-control" [(ngModel)]="travel.missiontype" placeholder="missiontype" name="missiontype">
@@ -92,16 +92,17 @@
                     </div>
                   </div>
 
-                  
-              
-                  <div class="form-group">
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control"><b>Select File: </b></label>
                     <div class="col-md-9">
-                    <div class="position-relative has-icon-left">
-                    <label>Select File</label>
-                    <input type="file" class="form-control-file" name="image"  (change)="onImageUpload($event)" id="image">
-                  </div>
+                      <label id="projectinput8" class="file ">
+                        <input type="file" class="form-control-file" name="image"  (change)="onImageUpload($event)" id="image">
+                        <span class="file-custom"></span>
+                        : </label>
                     </div>
                   </div>
+              
+              
               </div>
               
               <div class="form-actions right">

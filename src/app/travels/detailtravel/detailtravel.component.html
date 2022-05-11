@@ -7,45 +7,39 @@
 <section id="basic-form-layouts">
   <div class="row">
     <div class="col-sm-12">
-      <div class="content-header"><b>Details Travel</b></div><br><br>
+  <h2> <b>Details Travel</b></h2><br>
     </div>
-  </div><br><br>
+  </div>
  
   <div *ngIf="travelmodel">
     <div>
-      <label><b>Destination: </b></label> {{travelmodel.destination}}
-    </div>
+      <b>Destination: </b> {{travelmodel.destination}}
+    </div><br>
     <div>
       <label><b>Duration: </b></label> {{travelmodel.duration}}
-    </div>
+    </div><br>
     <div>
       <label><b>StartDate: </b></label>  {{travelmodel.startdate}}
     </div>  
-    <div>
+    <div><br>
         <label><b>EndDate: </b></label>  {{travelmodel.enddate}}
       </div> 
-      <div>
+      <div><br>
         <label><b>MissionType: </b></label>   {{travelmodel.missiontype}}
       </div>
-      <div>
+      <div><br>
       <img [src]="images" width="200px">
-      </div>
+      </div><br>
     
-
-     
-
       <div style="font-size:x-large; color:orange">
       <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false">
       
-      </ngb-rating><br><br>
+      </ngb-rating><br>
      
       </div>
      <p><b>  Nb Rate:</b> {{ currentRate  }} </p>
   </div>
   
-  
-  <br>
-  <br>
   <button  class="btn btn-primary"  routerLink="/list-travel" >Back to Travels List</button><br>
 
   
