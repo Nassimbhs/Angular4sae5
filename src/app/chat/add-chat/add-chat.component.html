@@ -1,4 +1,6 @@
 <app-navbar></app-navbar>
+<app-sidebar-front></app-sidebar-front>
+
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 <div class="wrapper">
   <div class="main-panel">
@@ -61,15 +63,15 @@
                   <i class="icon-emoticon-smile"></i>
                 </div>
                 <input type="text" class="form-control" name="message" id="input-message"
-                  placeholder="Type your message"[(ngModel)]="chat.message" ngModel>
+                  placeholder="Type your message"[(ngModel)]="chat.message" ngModel required>
                 <div class="form-control-position control-position-right">
                   <i class="ft-image mr-1"></i>
                 </div>
               </fieldset>
               <fieldset class="form-group position-relative has-icon-left col-lg-2 col-4 m-0">
-                <button type="submit" class="btn btn-raised btn-primary px-4">
+                <button type="submit" class="btn btn-raised btn-primary px-4" [disabled]="sendForm.invalid">
                   <i class="fa fa-paper-plane-o d-block d-xl-inline-block d-lg-none p-0"></i>
-                  <span class="d-none d-lg-inline-block">Send</span>
+                  <span class="d-none d-lg-inline-block" >Send</span>
                 </button>
               </fieldset>
             </form>

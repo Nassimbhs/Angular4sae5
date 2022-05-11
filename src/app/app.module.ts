@@ -35,6 +35,8 @@ import { PaymentComponent } from './front/payment/payment.component';
 import { NgxStripeModule } from 'ngx-stripe';
 import { ModalComponent } from './front/modal/modal.component';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { EndReservationComponent } from './front/end-reservation/end-reservation.component';
+import { SidebarFrontComponent } from './sidebar-front/sidebar-front.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { NgxPayPalModule } from 'ngx-paypal';
     InvoiceComponent,
     PaymentComponent,
     ModalComponent,
+    EndReservationComponent,
+    SidebarFrontComponent,
 
   ],
   imports: [

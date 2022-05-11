@@ -6,13 +6,6 @@
       <!-- Form actions layout section start -->
       <section id="form-action-layouts">
         <div class="row">
-          <div class="col-sm-12">
-            <div class="content-header">Form Actions</div>
-          </div>
-        </div>
-
-
-        <div class="row">
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
@@ -49,8 +42,8 @@
                               <label for="eventRegInput3">Registration number<span class="star">*</span></label>
                               <input type="text"  #mat="ngModel" required [(ngModel)]="car.matricule" id="eventRegInput3" class="form-control"
                                 placeholder="Exemple : 222 TUN 2022" name="company">
-                                <div class="alert alert-danger" *ngIf="m.invalid && m.touched">  
-                                  <div *ngIf="m.errors.required">Registration number is a required field </div>
+                                <div class="alert alert-danger" *ngIf="mat.invalid && mat.touched">  
+                                  <div *ngIf="mat.errors.required">Registration number is a required field </div>
                                 </div>
                             </div>
                           </div>
@@ -81,14 +74,20 @@
                             <div class="form-group col-12 mb-2">
                               <label for="eventRegInput5">Price <span class="star">*</span></label>
                               <input type="number" [(ngModel)]="car.price" id="eventRegInput5" class="form-control"
-                                name="contact" placeholder="contact number">
+                                name="price" #price="ngModel" required placeholder="Price">
+                                <div class="alert alert-danger" *ngIf="price.invalid && price.touched">  
+                                  <div *ngIf="price.errors.required">Price is a required field </div>
+                                </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="form-group col-12 mb-2">
                               <label for="eventRegInput5">Rating <span class="star">*</span></label>
-                              <input type="number" [(ngModel)]="car.rating" id="eventRegInput5" class="form-control"
-                                name="contact" placeholder="contact number">
+                              <input type="number" #rating="ngModel" required [(ngModel)]="car.rating" id="eventRegInput5" class="form-control"
+                                name="rating" placeholder="Rating">
+                                <div class="alert alert-danger" *ngIf="rating.invalid && rating.touched">  
+                                  <div *ngIf="rating.errors.required">Rating is a required field </div>
+                                </div>
                             </div>
                           </div>
 
@@ -96,15 +95,21 @@
                             <div class="form-group col-12 mb-2">
                               <label for="eventRegInput5">Seats<span class="star">*</span></label>
                               <input type="number" [(ngModel)]="car.seats" id="eventRegInput5" class="form-control"
-                                name="contact" placeholder="contact number">
-                            </div>
+                                name="seats"  #seats="ngModel" required placeholder="Seats">
+                                <div class="alert alert-danger" *ngIf="seats.invalid && seats.touched">  
+                                  <div *ngIf="seats.errors.required">Seats is a required field </div>
+                                </div>
+                              </div>
                           </div>
 
                           <div class="row">
                             <div class="form-group col-12 mb-2">
                               <label for="eventRegInput5">Gearbox<span class="star">*</span></label>
-                              <input type="text" [(ngModel)]="car.gearbox" id="eventRegInput5" class="form-control"
-                                name="contact" placeholder="contact number">
+                              <input type="text" #gearbox="ngModel" [(ngModel)]="car.gearbox" id="eventRegInput5" class="form-control"
+                                name="gearbox" placeholder="Gearbox Automatic or Manual">
+                                <div class="alert alert-danger" *ngIf="gearbox.invalid && gearbox.touched">  
+                                  <div *ngIf="gearbox.errors.required">Gearbox is a required field </div>
+                                </div>
                             </div>
                           </div>
 
@@ -124,9 +129,7 @@
                     </div>
                   </form>
 
-                  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
-                    <p style="font-size: 50px; color: white">Uploading the image...</p>
-                </ngx-spinner>
+      
                 </div>
               </div>
             </div>
@@ -147,5 +150,7 @@
           class="text-bold-800 primary darken-2">PIXINVENT </a>, All rights reserved. </span></p>
   </footer>
   <!-- End : Footer-->
-
+  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 50px; color: white">Uploading the image...</p>
+</ngx-spinner>
 </div>

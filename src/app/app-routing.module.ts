@@ -1,3 +1,4 @@
+import { EndReservationComponent } from './front/end-reservation/end-reservation.component';
 import { InvoiceComponent } from './front/invoice/invoice.component';
 import { PaypalComponent } from './front/paypal/paypal.component';
 import { FrontDetailCarComponent } from './front/front-detail-car/front-detail-car.component';
@@ -22,8 +23,8 @@ const routes:Routes = [
   { path: 'statCar' , component:StatComponent },
   { path: 'frontListCar' , component:FrontListCarComponent },
   { path: 'frontDetailCar/:id' , component:FrontDetailCarComponent },
-  { path: 'paypal' , component:PaypalComponent },
-  { path: 'invoice' , component:InvoiceComponent },
+  { path: 'endReservation/:id' , component:EndReservationComponent },
+  { path: 'invoice/:id' , component:InvoiceComponent },
 
 ];
 
