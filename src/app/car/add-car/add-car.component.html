@@ -27,13 +27,13 @@
               <div class="card-body">
                 <div class="px-3">
 
-                  <form (ngSubmit)="onUpload()" novalidate enctype="multipart/form-data">
+                  <form (ngSubmit)="onUpload()" novalidate enctype="multipart/form-data" #f="ngForm">
                     <div class="row justify-content-md-center">
                       <div class="col-md-6">
                         <div class="form-body">
                           <div class="row">
                             <div class="form-group col-12 mb-2">
-                              <label for="eventRegInput1">Car Model</label>
+                              <label for="eventRegInput1">Car Model<span class="star">*</span></label>
                               <input type="text" [(ngModel)]="car.carModel" id="eventRegInput1" class="form-control"
                                 placeholder="name" name="fullname" #m="ngModel" required minlength="2">
                                 <div class="alert alert-danger" *ngIf="m.invalid && m.touched">  
@@ -46,15 +46,18 @@
 
                           <div class="row">
                             <div class="form-group col-12 mb-2">
-                              <label for="eventRegInput3">Matricule</label>
+                              <label for="eventRegInput3">Registration number<span class="star">*</span></label>
                               <input type="text"  #mat="ngModel" required [(ngModel)]="car.matricule" id="eventRegInput3" class="form-control"
-                                placeholder="company" name="company">
+                                placeholder="Exemple : 222 TUN 2022" name="company">
+                                <div class="alert alert-danger" *ngIf="m.invalid && m.touched">  
+                                  <div *ngIf="m.errors.required">Registration number is a required field </div>
+                                </div>
                             </div>
                           </div>
 
-                          <div class="container row">
+                          <div class="row">
                             <div class="col-md-12">
-                              <label for="eventRegInput3">Upload Image</label>
+                              <label for="eventRegInput3">Upload Image<span class="star">*</span></label>
                             </div>
                           </div>
 
@@ -76,14 +79,14 @@
 
                           <div class="row">
                             <div class="form-group col-12 mb-2">
-                              <label for="eventRegInput5">Price</label>
+                              <label for="eventRegInput5">Price <span class="star">*</span></label>
                               <input type="number" [(ngModel)]="car.price" id="eventRegInput5" class="form-control"
                                 name="contact" placeholder="contact number">
                             </div>
                           </div>
                           <div class="row">
                             <div class="form-group col-12 mb-2">
-                              <label for="eventRegInput5">Rating</label>
+                              <label for="eventRegInput5">Rating <span class="star">*</span></label>
                               <input type="number" [(ngModel)]="car.rating" id="eventRegInput5" class="form-control"
                                 name="contact" placeholder="contact number">
                             </div>
@@ -91,7 +94,7 @@
 
                           <div class="row">
                             <div class="form-group col-12 mb-2">
-                              <label for="eventRegInput5">Seats</label>
+                              <label for="eventRegInput5">Seats<span class="star">*</span></label>
                               <input type="number" [(ngModel)]="car.seats" id="eventRegInput5" class="form-control"
                                 name="contact" placeholder="contact number">
                             </div>
@@ -99,50 +102,31 @@
 
                           <div class="row">
                             <div class="form-group col-12 mb-2">
-                              <label for="eventRegInput5">Gearbox</label>
+                              <label for="eventRegInput5">Gearbox<span class="star">*</span></label>
                               <input type="text" [(ngModel)]="car.gearbox" id="eventRegInput5" class="form-control"
                                 name="contact" placeholder="contact number">
                             </div>
                           </div>
 
-                    
-                          <div class="row">
-                            <div class="form-group col-12 mb-2">
-                              <label>Existing Customer</label>
-                              <div class="input-group">
-                                <div class="custom-control custom-radio d-inline-block ml-1">
-                                  <input type="radio" id="customRadioInline1" name="customRadioInline1"
-                                    class="custom-control-input">
-                                  <label class="custom-control-label" for="customRadioInline1">Yes</label>
-                                </div>
-                                <div class="custom-control custom-radio d-inline-block ml-2">
-                                  <input type="radio" id="customRadioInline2" checked name="customRadioInline1"
-                                    class="custom-control-input">
-                                  <label class="custom-control-label" for="customRadioInline2">No</label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
                         </div>
                       </div>
                     </div>
-
-                    <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
-                      <p style="font-size: 50px; color: white">Uploading the image...</p>
-                  </ngx-spinner>
                   
                     <div class="form-actions clearfix">
                       <div class="buttons-group float-left">
-                        <button type="button" class="btn btn-raised btn-warning mr-1">
+                        <button type="button" class="btn btn-raised btn-warning mr-1" (click)="f.resetForm()">
                           <i class="ft-x"></i> Cancel
                         </button>
-                        <button type="button" class="btn btn-raised btn-primary mr-1"  type="submit" class="btn btn-outline-success" [disabled]="!imagen">
+                        <button type="button" class="btn btn-raised btn-primary mr-1"  type="submit" class="btn btn-outline-success"[disabled]="f.invalid" [disabled]="!imagen">
                           <i class="fa fa-check-square-o"></i> Save
                         </button>
                       </div>
                     </div>
                   </form>
 
+                  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+                    <p style="font-size: 50px; color: white">Uploading the image...</p>
+                </ngx-spinner>
                 </div>
               </div>
             </div>
