@@ -31,10 +31,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 import { PaypalComponent } from './front/paypal/paypal.component';
 import { InvoiceComponent } from './front/invoice/invoice.component';
-import {NgxPayPalModule} from 'ngx-paypal';
 import { PaymentComponent } from './front/payment/payment.component';
 import { NgxStripeModule } from 'ngx-stripe';
 import { ModalComponent } from './front/modal/modal.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   declarations: [
