@@ -1,0 +1,110 @@
+<div>   
+
+<h2> Company-list </h2>
+<a routerLink="/Create-Company" routerLinkActive="active" class="nav-link"><p style="text-align-last: center;color: blue;">Create Company</p></a>
+
+
+<input type="text" [(ngModel)]="name" (input)="Search()" />
+
+{{name}}
+
+ 
+
+<table    class = "table table-striped"   style="text-align-last: right"   >
+
+	<thead>
+		<input type="text" [(ngModel)]="name" (input)="Search()" />
+
+{{name}}
+		<tr> 
+            <th  scope="col" (click)="sortData()" > Id</th>
+			<th> Name</th>
+			<th scope="col" (click)="sortCapacity()" >Capacity</th>
+			
+			<th scope="col" (click)="sortResgistrationNumber()" >Resgistration Number</th>
+
+			<th>Action</th>
+			<!--
+			<th> Email</th>
+			
+			 -->
+
+
+		<!--	<th>Id</th>
+
+
+			<th>Photo</th>
+			
+			
+			<th>Positions</th>
+			
+			<th>Invitation</th>
+			
+			<th>Password</th>
+			<th>PhoneNumber</th>
+			<th>Role</th>
+			
+			<th>email</th>
+		-->
+			
+
+
+
+
+		</tr>
+	</thead>
+
+	<tbody>
+		
+		<tr *ngFor = "let company of companys | paginate: { itemsPerPage: 5, currentPage: page, totalItems:totalLength } ">
+			
+            <td style="width: 25%; height: 5%; align-content: center;" > {{company.id}}</td>
+			<td  > {{company.name}}</td>
+			<td> {{company.capacity}}</td>
+			<td> {{company.resgistrationNumber}}</td>	
+			<!--		
+			<td> {{company.email}}</td>
+			-->
+			
+
+
+		<td>
+				
+               <button (click) = "updateCompany(company.id)" class = "btn btn-info" >Update</button>
+               
+               <button (click) = "deleteCompany(company.id)" class = "btn btn-danger" style="margin-left: 10 px;" >Delete</button>
+
+               <button (click) = "companyDetails(company.id)" class = "btn btn-info" style="margin-left: 10 px;" >View</button>
+
+               
+
+			</td>
+		
+			<!--
+				| paginate: { itemsPerPage: 5, currentPage: page, totalItems:totalLength } ---------------------------------
+            <td> {{employee.id}}</td>
+            <td> {{employee.photo}}</td>
+
+
+			
+			<td> {{employee.positions}}</td>
+			<td> {{employee.invitation}}</td>
+			
+			<td> {{employee.password}}</td>
+			<td> {{employee.phoneNumber}}</td>
+			<td> {{employee.role}}</td>
+			
+			<td> {{employee.email}}</td>
+
+
+-------------------------------------------!!!!!!!
+		-->
+			
+		</tr>
+	</tbody>
+	
+<pagination-controls  (pageChange)="page = $event"></pagination-controls>
+</table>
+
+
+ </div>
