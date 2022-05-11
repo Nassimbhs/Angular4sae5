@@ -4,6 +4,7 @@ import { ReclamationService } from 'src/app/services/reclamation.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { company } from 'src/app/Model/company';
 import { user } from 'src/app/Model/user';
+import { smspojo } from 'src/app/Model/smspojo';
  
  @Component({
   selector: 'app-create-reclamation',
@@ -16,7 +17,10 @@ export class CreateReclamationComponent implements OnInit {
   Reclamation :reclamations =new reclamations();
   
   idd!: any;
-   
+  content!:any;
+  message!:any;
+  status!:any;
+   smspojo:smspojo=new smspojo();
   users:user =new user();
    public userlist1:any;
    msg !: string;
@@ -24,13 +28,21 @@ export class CreateReclamationComponent implements OnInit {
     this.getlistUser();
      
     JSON.stringify(this.idd);
+    
+  }
+  EnvoieSms(){
+     
+    this.rec.EnvoieSms(this.smspojo).subscribe(res=>{
+      console.log(res)
+    });
   }
   SaveReclam(){  
     this.users.id=this.idd;
     this.rec.createReclamation(this.idd,this.Reclamation).subscribe(res=> {
       this.Reclamation=res;
+      this.EnvoieSms();
        this.rout.navigate(['/reclamations']);
-      console.log(res);
+    
   
     });
 }

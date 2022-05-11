@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { reclamations } from '../Model/reclamations';
 import { task } from '../Model/task';
+import { smspojo } from '../Model/smspojo';
+ 
   
 @Injectable({
   providedIn: 'root'
@@ -38,6 +40,10 @@ return this.http.get<reclamations>("http://localhost:8090/SpringMVC/getRecByid/"
   }
   createReclamation(id :number,rec : reclamations){
     return this.http.post<reclamations>("http://localhost:8090/SpringMVC/addClaim/"+id,rec);
+
+  }
+  EnvoieSms(sms: smspojo){
+    return this.http.post<smspojo>("http://localhost:8090/SpringMVC/sms",sms);
 
   }
 }   
