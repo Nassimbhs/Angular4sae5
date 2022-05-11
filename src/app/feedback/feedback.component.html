@@ -7,6 +7,10 @@
         <a routerLink="/createFeed" routerLinkActive="active" class="nav-link"><p style="text-align-last: center;color: blue;">Create Feedback</p></a></li>
 
 </ul>
+<table *ngIf="!loader" class="table table-striped table-hover "  style="text-align-last: center;"  >
+    <tr><td></td><td></td> <button (click)="exportPD()" class="btn btn-success">Imprimer</button>
+   </tr>
+   </table>
 <table  class="table table-striped table-hover " style="text-align-last: center;" >
     <tr  >
         <td>

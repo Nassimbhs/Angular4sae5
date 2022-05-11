@@ -35,13 +35,13 @@
         </div>
         <div class="form-group"  >
             <label>Start</label> 
-            <input type="date"  class="form-control" [(ngModel)]="Calendar.events.start" id="start" name="start">  
+            <input type="date" id="date1" class="form-control" [(ngModel)]="Calendar.events.start" id="start" name="start">  
       
         </div>
         <div class="form-group"  >
             <label>End</label> 
-            <input type="date"  class="form-control" [(ngModel)]="Calendar.events.end" id="end" name="end">  
-      
+            <input type="date" id="date2"  class="form-control" [(ngModel)]="Calendar.events.end" id="end" name="end">  
+      <p id="output"></p>
         </div>
        </td>
         
@@ -49,7 +49,21 @@
         </tr>
         </tbody> 
        </table>
-       <br>  <p style="text-align-last: center;"> <button  (click)="SaveFeed()"   class="btn btn-success" type="submit">Save</button></p>  
+       <br>  <p style="text-align-last: center;"> <button   onclick="compare()"  class="btn btn-success" type="submit">Save</button></p>  
     </div> 
+
+    <script>
+
+         function compare(){
+             var Date1=new Date(document.getElementById('date1').value);
+             var Date2=new Date(document.getElementById('date2').value);
+var result;
+if(Date1>Date2)
+{
+    result="Date1 <h5>"+Date1+"</h5> Is Greater than Date2";
+    Document.getElementById("output").style.color='green';
+}
+        }
+    </script>
         </form>
       

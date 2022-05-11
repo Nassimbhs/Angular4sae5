@@ -18,15 +18,21 @@
 <td style="width: 69%; height: 5%; align-content: right;"  ></td>
 <td> 
 
-    <label>Select Evenement</label>
+    <label>Select User</label>
 
       <select class="form-control form-control-lg" id="idCat" name="idCat" [(ngModel)]="idCom">        
-        <option  *ngFor="let feed of data" [value]="feed.id" (click)="getCompany(feed.id)" >   
-              {{feed.name}}
+        <option  *ngFor="let feed of dat" [value]="feed.id" (click)="getallCalendar()" >   
+              {{feed.username}}
               
         </option>
-    </select>                     
-
+    </select> 
+    <label>Select Domaine</label>                    
+    <select class="form-control form-control-lg" id="idC" name="idC" [(ngModel)]="idC" >        
+      <option  *ngFor="let feed of data" [value]="feed.id" (click)="getCompany(feed.id)" >   
+            {{feed.name}}
+            
+      </option>
+  </select> 
 
  
 </td></tr>

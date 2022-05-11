@@ -1,0 +1,134 @@
+<h2> Invitation-list </h2>
+
+<input type="text" [(ngModel)]="name" (input)="Search()" />
+
+{{name}}
+
+<table  class = "table table-striped">
+
+	<thead>
+		<tr> 
+
+			<th>ID</th>
+			
+			<th  >  Company Name</th>
+			<th>Employee Name</th>
+			<th>idc</th>
+			<th>ide</th>
+			<th>State</th>
+			<th>Actions</th>
+		<!--	
+			<th> Idc</th>
+			<th>Ide</th>
+			<th>Resgistration Number</th>
+
+			<th>Action</th>
+			
+			<th> Email</th>
+			
+			 -->
+
+
+		<!--	<th>Id</th>
+
+
+			<th>Photo</th>
+			
+			
+			<th>Positions</th>
+			
+			<th>Invitation</th>
+			
+			<th>Password</th>
+			<th>PhoneNumber</th>
+			<th>Role</th>
+			
+			<th>email</th>
+		-->
+			
+
+
+
+
+		</tr>
+	</thead>
+
+	<tbody>
+		
+		
+			
+
+			<tr *ngFor = "let invitation of invitations | paginate: { itemsPerPage: 5, currentPage: page, totalItems:totalLength } "
+
+		>
+		    <td> {{invitation.id}}</td>
+			<td> {{invitation.c.name}}</td>
+			<td> {{invitation.employee.firstName}}</td>
+			<td> {{invitation.c.id}}</td>
+			<td> {{invitation.employee.id}}</td>
+			<td> {{invitation.state}}</td>
+			<td>
+				
+               <button (click) = "updateInvitation(invitation.id)" class = "btn btn-info" >Update</button>
+
+               <button (click) = "deleteInvitation(invitation.id)" class = "btn btn-danger" style="margin-left: 10 px;" >Delete</button>
+
+			
+			
+			</td>
+
+			<!--
+				
+		
+
+
+			<td> {{invitation.c.id}}</td>
+			<td> {{invitation.employee.id}}</td>
+				<td> {{company.id}}</td>
+			<td> {{employee.id}}</td>
+			<td> {{company.resgistrationNumber}}</td>	
+					
+			<td> {{company.email}}</td>
+			<td> {{invitation.idc}}</td>
+			<td> {{invitation.ide}}</td>
+			-->
+			
+
+<!--
+		<td>
+				
+               <button (click) = "updateCompany(company.id)" class = "btn btn-info" >Update</button>
+               
+               <button (click) = "deleteCompany(company.id)" class = "btn btn-danger" style="margin-left: 10 px;" >Delete</button>
+
+               <button (click) = "employeeDetails(employee.id)" class = "btn btn-info" style="margin-left: 10 px;" >View</button>
+
+              
+
+			</td>
+			 -->
+		
+			<!--
+            <td> {{employee.id}}</td>
+            <td> {{employee.photo}}</td>
+
+
+			
+			<td> {{employee.positions}}</td>
+			<td> {{employee.invitation}}</td>
+			
+			<td> {{employee.password}}</td>
+			<td> {{employee.phoneNumber}}</td>
+			<td> {{employee.role}}</td>
+			
+			<td> {{employee.email}}</td>
+			</tr>
+		-->
+			
+		
+	</tbody>
+	
+
+</table>
+
+<pagination-controls (pageChange)="page = $event"></pagination-controls>

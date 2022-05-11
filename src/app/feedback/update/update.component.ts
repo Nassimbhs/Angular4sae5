@@ -3,6 +3,7 @@ import { feedback } from 'src/app/Model/feedback';
 import { FeedbackService } from 'src/app/services/feedback.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { company } from 'src/app/Model/company';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
@@ -20,7 +21,10 @@ companies :company =new company();
     this.getlistCompany();
     this.companies={
       id:null,
-name:null
+name:null,
+resgistrationNumber:null,
+capacity:null,
+email:null
       
     }
     this.id=this.router.snapshot.params['id'];

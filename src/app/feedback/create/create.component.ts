@@ -22,7 +22,10 @@ companies :company =new company();
     this.getlistCompany();
     this.companies={
       id:null,
-      name:null
+      name:null,
+      resgistrationNumber:null,
+capacity:null,
+email:null
       
       
     }

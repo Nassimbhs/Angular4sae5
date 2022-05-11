@@ -9,27 +9,39 @@ import { FeedbackService } from '../services/feedback.service';
 export class SearchCompanyComponent implements OnInit {
   public data : any;
   idCom !:number;
-
+  idC !:number;
+public dat:any;
   constructor(private feed : FeedbackService,private router:ActivatedRoute,private rout:Router) { }
 
   ngOnInit(): void {
     this.getlist();
+   
    }
   getlist(){
      
-         this.feed.getallCalendar().subscribe(res=>{ this.data=res;
+         this.feed.getListOfUser().subscribe(res=>{ this.dat=res;
         
         
         });
         
         
-      } gotToFeedBackList(id:number){
-        this.rout.navigate(['Calendrier',this.idCom]);
+      } 
+      getallCalendar(){
+        this.feed.getUserByCalendar(this.idCom).subscribe(res=>{ this.data=res;
+       
+      console.log(this.idCom);
+       
+       });
+       
+       
+     } 
+      gotToFeedBackList(id:number){
+        this.rout.navigate(['Calendrier',this.idC]);
       }
 
       getCompany(id:number){
-        this.feed.getCalendar(id).subscribe(res=>{ this.data=res});
-          this.gotToFeedBackList(this.idCom);
+       this.feed.getUserByCalendar(id).subscribe(res=>{ this.data=res});
+          this.gotToFeedBackList(this.idC);
       }
     
      

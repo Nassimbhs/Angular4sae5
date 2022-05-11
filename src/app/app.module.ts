@@ -22,22 +22,31 @@ import { ReclamationComponent } from './reclamation/reclamation.component';
 import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
 import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
- 
- 
-
+ import { InvitationListComponent } from './invitation/invitation-list/invitation-list.component';
+ import {NgxPaginationModule} from 'ngx-pagination';
+import { EmployeeDetailsComponent } from './employee/employee-details/employee-details.component';
+import { NgToastModule } from 'ng-angular-popup';
+import { CompanyListComponent } from './company/company-list/company-list.component';
  import { NgChartsModule } from 'ng2-charts';
 import { StatistiqueComponent } from './statistique/statistique.component';
 import { ListComponent } from './reclamation/list/list.component';
 import { CreateReclamationComponent } from './reclamation/create-reclamation/create-reclamation.component';
 import { CalenderComponent } from './calender/calender.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
-
-import { SearchCompanyComponent } from './search-Company/search-company.component';
+import { CompanyDetailsComponent } from './company/company-details/company-details.component';
+ import { SearchCompanyComponent } from './search-Company/search-company.component';
 import { UpdateReclamationComponent } from './reclamation/update-reclamation/update-reclamation.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { CreateCalendarComponent } from './calender/create-calendar/create-calendar.component';
 import { ProgressBarModule } from 'angular-progress-bar';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { UpdateCompanyComponent } from './company/update-company/update-company.component';
+import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
+import { UpdateInvitationComponent } from './invitation/update-invitation/update-invitation.component';
+import { SendInvitationComponent } from './invitation/send-invitation/send-invitation.component';
+import { CreateCompanyComponent } from './company/create-company/create-company.component';
+import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 const routes:Routes = [
   { path: 'cars' , component:CarComponent },
   { path: 'chat' , component:ChatComponent },
@@ -53,12 +62,23 @@ const routes:Routes = [
   { path: 'feedback-update/:id' , component:UpdateComponent },
   { path: 'reclamation-update/:id' , component:UpdateReclamationComponent },
   { path: 'forum' , component:ForumComponent },
-  { path: 'invitation' , component:InvitationComponent },
+  { path: 'List-Invitation' , component:InvitationListComponent },
   { path: 'statistique' , component:StatistiqueComponent },
   { path: 'Calendrier/:id' , component:CalenderComponent },
   { path: 'create-reclamation' , component: CreateReclamationComponent},
   { path: 'reclam/:id' , component:ListComponent },
   { path: 'create-Calendar' , component: CreateCalendarComponent},
+  { path: 'List-employee' , component: EmployeeListComponent},
+  { path: 'update-employee/:id' , component: UpdateEmployeeComponent},
+  { path: 'employee-details/:id' , component: EmployeeDetailsComponent},
+  { path: 'List-Company' , component: CompanyListComponent},
+  { path: 'company-details/:id' , component: CompanyDetailsComponent},
+  { path: 'update-company/:id' , component: UpdateCompanyComponent},
+  { path: 'update-invitation/:id' , component: UpdateInvitationComponent},
+  { path: 'Send-Invitation' , component: SendInvitationComponent},
+  { path: 'Create-Company' , component: CreateCompanyComponent},
+  { path: 'Create-Employee' , component: CreateEmployeeComponent},
+  
 ];
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -84,12 +104,25 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ListComponent,
     CreateReclamationComponent,
     CalenderComponent,
-  
+    InvitationListComponent,
     SearchCompanyComponent,
-       UpdateReclamationComponent,
-       CreateCalendarComponent
+     UpdateReclamationComponent,
+     CreateCalendarComponent,
+     EmployeeListComponent,
+     UpdateEmployeeComponent,
+     EmployeeDetailsComponent,
+     CompanyListComponent ,
+     CompanyDetailsComponent,
+     UpdateCompanyComponent,
+     UpdateInvitationComponent,
+     SendInvitationComponent,
+  CreateCompanyComponent,
+  CreateEmployeeComponent
+
+
   ],
   imports: [
+    NgxPaginationModule,
     NgChartsModule,
   OrderModule,
     HttpClientModule,
@@ -111,6 +144,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

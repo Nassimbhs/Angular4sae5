@@ -1,0 +1,134 @@
+
+
+
+<div>
+	
+
+
+<h2> Employee-list </h2>
+<a routerLink="/Create-Employee" routerLinkActive="active" class="nav-link"><p style="text-align-last: center;color: blue;">Create Employee</p></a>
+<input type="text" [(ngModel)]="firstName" (input)="Search()" />
+
+{{firstName}}
+<table  class = "table table-striped">
+
+	<thead>
+		<tr> 
+            <th scope="col" (click)="sortData()" >Id</th>
+			<th>First name</th>
+			<th>Last name</th>
+			<th scope="col" (click)="sortAge()" >Age</th>
+			<th>Cin</th>
+			<th>Action</th>
+
+
+		<!--	<th>Id</th>
+
+
+			<th>Photo</th>
+			
+			
+			<th>Positions</th>
+			
+			<th>Invitation</th>
+			
+			<th>Password</th>
+			<th>PhoneNumber</th>
+			<th>Role</th>
+			
+			<th>email</th>
+		-->
+			
+
+
+
+
+		</tr>
+	</thead>
+
+	<tbody>
+		
+		<tr *ngFor = "let employee of employees | paginate: { itemsPerPage: 5, currentPage: page, totalItems:totalLength } ">
+            <td> {{employee.id}}</td>
+			<td> {{employee.firstName}}</td>
+			<td> {{employee.lastName}}</td>
+			<td> {{employee.age}}</td>
+			<td> {{employee.cin}}</td>
+			
+			
+
+
+			<td>
+				
+               <button (click) = "updateEmployee(employee.id)" class = "btn btn-info" >Update</button>
+               <button (click) = "deleteEmployee(employee.id)" class = "btn btn-danger" style="margin-left: 10 px;" >Delete</button>
+
+               <button (click) = "employeeDetails(employee.id)" class = "btn btn-info" style="margin-left: 10 px;" >View</button>
+
+
+             
+
+			</td>
+			<!--
+<td> {{employee.lastName}}</td>
+			<td> {{employee.age}}</td>
+			<td> {{employee.cin}}</td>
+
+				
+            <td> {{employee.id}}</td>
+            <td> {{employee.photo}}</td>
+
+
+			
+			<td> {{employee.positions}}</td>
+			<td> {{employee.invitation}}</td>
+			
+			<td> {{employee.password}}</td>
+			<td> {{employee.phoneNumber}}</td>
+			<td> {{employee.role}}</td>
+			
+			<td> {{employee.email}}</td>
+		-->
+
+ 
+
+			
+		</tr>
+
+
+		
+
+
+
+
+
+
+	</tbody>
+
+
+
+	
+
+
+</table>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
+<!--
+<hr>
+<ul class="nav nav-pills">
+	<li class="nav-item" *ngFor="let p of pages;let i=index" >
+		
+		<a class="nav-link" href="" (click)="setPage(i,$event)" [ngClass]="{'active':i==page}" >{{i}}</a>
+	</li>
+
+</ul>
+-->
+
+
+
+
+
+
+</div>
+
+
+

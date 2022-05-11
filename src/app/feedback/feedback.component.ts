@@ -85,7 +85,11 @@ exportPDF(id:number){
   this.feed.ExportPDFByid(id).subscribe(res=>{this.userlis =res });
  
 }
-
+exportPD(){
+ 
+  this.feed.ExportPDF().subscribe(res=>{this.userlis =res });
+ 
+}
 search(query:any){
   this.ListFeed=(query)? this.ListFeed.filter(fe=>fe.content.includes(query)):this.ListFeed
   
