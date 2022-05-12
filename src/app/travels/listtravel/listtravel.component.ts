@@ -3,6 +3,7 @@ import { TravelModel } from 'src/app/modal/TravelModel';
 import { travelService } from 'src/app/service/travelService';
 import { Router } from '@angular/router';
 import { HttpEventType } from '@angular/common/http';
+import { SearchcritereService } from 'src/app/service/searchcritere.service';
 
 @Component({
   selector: 'app-listtravel',
@@ -14,8 +15,9 @@ export class ListtravelComponent implements OnInit {
   listTravels : any[];
   image: any;
   listImages : String[] = []
+  SearchCritere : any[];
 
-constructor(private _service:travelService,private router:Router, public listservice: travelService) { }
+constructor(private _service:travelService,private router:Router, public listservice: travelService, private searchcritereService:SearchcritereService) { }
 
 
 
@@ -23,7 +25,10 @@ ngOnInit(): void {
  this.gettravel();
  
 
+
+
 }
+
 
 
 gettravel(){
@@ -44,6 +49,18 @@ gettravel(){
   );
   
   }
+
+  
+
+  
+
+      
+  
+    
+    
+ 
+    
+  
   
 
   deleteTravel(id:any) {

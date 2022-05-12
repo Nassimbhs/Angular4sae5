@@ -35,9 +35,7 @@ addTravel(travel:any){
 
 deleteTravel (id: any):Observable<TravelModel>  {
     const url = this.travelsUrl+"/remove-travel/"+ id;
-    return this._http.delete<TravelModel>(url);
-
-  
+    return this._http.delete<TravelModel>(url); 
   }
 
   updateTravel (value: any):Observable<Object>  {

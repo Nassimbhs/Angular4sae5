@@ -28,18 +28,14 @@ addreservation(reservation:any){
 deletereservation (id: any):Observable<reservationtravel>  {
     const url = this.reservationUrl+"/remove-reservation"+ id;
     return this._http.delete<reservationtravel>(url);
-
-  
   }
-
-
 
   updatereservationtravel (value: any):Observable<Object>  {
 
     return this._http.put(this.reservationUrl+"/modify-reservation",value);
   }
 
-  updatereservationtravelByidByid (id: any):Observable<reservationtravel>  {
+  updatereservationtravelByid (id: any):Observable<reservationtravel>  {
 
     return this._http.get<reservationtravel>(this.reservationUrl+"/retrieve-reservation"+id);
   }
@@ -48,6 +44,8 @@ deletereservation (id: any):Observable<reservationtravel>  {
 
     return this._http.get<reservationtravel>(this.reservationUrl+"/retrieve-reservation/"+id);
   }
+
+  
 
  
 
