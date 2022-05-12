@@ -16,7 +16,7 @@ export class ListtravelComponent implements OnInit {
   image: any;
   listImages : String[] = []
   SearchCritere : any[];
-
+  destination: any;
 constructor(private _service:travelService,private router:Router, public listservice: travelService, private searchcritereService:SearchcritereService) { }
 
 
@@ -29,6 +29,18 @@ ngOnInit(): void {
 
 }
 
+
+Search(){
+  if(this.destination = "") {
+    this.ngOnInit();
+
+  }else{
+
+ this.listTravels = this.listTravels.filter(res => {
+ return res.reservationdate.toLocaleLowerCase().match(this.destination.toLocaleLowerCase());
+})
+  }
+}
 
 
 gettravel(){
