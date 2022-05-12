@@ -1,0 +1,31 @@
+<div class="container">
+  <header class="jumbotron">
+    <p>{{ content }}</p>
+  </header>
+</div>
+<table>
+  <thead>
+     <tr>
+       <td>firstName</td>
+      <td>lastName</td>
+      <td>userName</td>   
+      <td>email</td>
+      <td>birthDate</td>
+      <td>userRoles</td>
+    
+    
+
+  </thead>
+  <tbody>
+    
+    <tr *ngFor="let u of listUser">
+      <td>{{u.firstName}}</td>
+      <td>{{u.lastName}}</td>
+      <td>{{u.userName}}</td>
+      <td>{{u.email}}</td>
+      <td>{{u.birthDate}}</td>
+      <td>{{u.userRoles}}</td>
+
+    </tr>
+  </tbody>
+</table>
