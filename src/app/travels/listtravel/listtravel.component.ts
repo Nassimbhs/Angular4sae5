@@ -17,9 +17,17 @@ export class ListtravelComponent implements OnInit {
   listImages : String[] = []
   SearchCritere : any[];
   destination: any;
+
 constructor(private _service:travelService,private router:Router, public listservice: travelService, private searchcritereService:SearchcritereService) { }
 
 
+  travel : TravelModel=new TravelModel();
+  
+addsearch(){
+    
+  this._service.retrievetravelcritere(this.travel).subscribe(()=>this.router.navigateByUrl("/list-travel"));
+ 
+}
 
 ngOnInit(): void {
  this.gettravel();

@@ -1,0 +1,130 @@
+
+
+
+    <div class="main-panel">
+        <!-- BEGIN : Main Content-->
+        <div class="main-content">
+          <div class="content-wrapper"><!--Vertical Timeline Starts-->
+  <section id="timeline" class="timeline-center timeline-wrapper">
+  <div class="row">
+    <div class="col-sm-12">
+      
+    </div>
+  </div>
+  
+  
+  <ul class="timeline">
+    <li class="timeline-line"></li>
+    <li class="timeline-item">
+     
+      <div class="timeline-card card border-grey border-lighten-2">
+        <div class="card-header">
+          <h1 class="card-title mb-0">
+            <a><b>DETAIL TRAVEL</b></a>
+          </h1>
+          
+        </div>
+        <div class="card-content"><br>
+          <div class="card-body">
+            <img [src]="images" width="440px"><br><br>
+            <div class="list-inline mb-1">
+              <span class="pr-1">
+                <a class="primary">
+                  <span class="fa fa-thumbs-o-up"></span> Like</a>
+              </span>
+              <span class="pr-1">
+                <a class="primary">
+                  <span class="fa fa-commenting-o"></span> Comment</a>
+              </span>
+              <span>
+                <a class="primary">
+                  <span class="fa fa-share-alt"></span> Share</a>
+              </span>
+            </div>
+            <div style= "font-size:x-large; color:orange" >
+              <ngb-rating [max]="5" [(rate)]="currentRate"  (rateChange)="ratingChange($event)" [readonly]="false">
+              </ngb-rating><br>
+             
+              </div>
+            <p class="card-text"> 
+              <b>Destination: </b> {{travelmodel.destination}}<br>
+            <b>Duration: </b> {{travelmodel.duration}}<br>
+            <b>StartDate: </b>  {{travelmodel.startdate}}<br>
+            <b>EndDate: </b> {{travelmodel.enddate}}<br>
+           <b>MissionType: </b> {{travelmodel.missiontype}}</p>
+            </div>
+            
+              <div *ngIf="travelmodel">
+          <div class="card-content">
+            </div>
+          </div>
+          <div class="card-footer px-0 py-0">
+            <div class="card-body ">
+              <div class="media">
+                <div class="media-left">
+                  <a>
+                    <span class="avatar avatar-online">
+                      <img src="/assets/avatar-s-1.png" class="rounded-circle" alt="avatar" width="50">
+                    </span>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <p class="text-bold-600 mb-0">
+                    <a>Jason Ansley</a>
+                  </p>
+                  <p class="m-0">Prix Svp!!.</p>
+                  <div class="list-inline mb-1">
+                    <span class="pr-1">
+                      <a class="primary">
+                        <span class="fa fa-thumbs-o-up"></span> Like</a>
+                    </span>
+                    <span class="pr-1">
+                      <a class="primary">
+                        <span class="fa fa-commenting-o"></span> Replay</a>
+                    </span>
+                  </div>
+                  <div class="media">
+                    <div class="media-left">
+                      <a>
+                        <span class="avatar avatar-online">
+                          <img src="assets/avatar-s-18.png" class="rounded-circle" alt="avatar" width="50">
+                        </span>
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <p class="text-bold-600 mb-0">
+                        <a>Janice Johnston</a>
+                      </p>
+                      <p>Svp vous pouvez me préciser le programme durant cette mission ! l'hotel c'est inclus dans l'offre??.</p>
+                      <div class="list-inline mb-1">
+                        <span class="pr-1">
+                          <a class="primary">
+                            <span class="fa fa-thumbs-o-up"></span> Like</a>
+                        </span>
+                        <span class="pr-1">
+                          <a class="primary">
+                            <span class="fa fa-commenting-o"></span> Replay</a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <form>
+                <fieldset class="form-group position-relative has-icon-left mb-0">
+                  <input type="text" class="form-control" placeholder="Write comments..."><br><br>
+                  <button  class="btn btn-primary"  routerLink="/list-travelusers" >Back to Travels List</button><br>
+                  <div class="form-control-position">
+                    <i class="fa fa-dashcube"></i>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  
+      

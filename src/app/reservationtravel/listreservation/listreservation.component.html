@@ -29,8 +29,8 @@
               <th (click)="sort('place')">Num places&nbsp;<i class="fa fa-sort"></i></th>
               <th>Num Reservation</th>
              
-              
-              <th>Action</th>
+              <th>Statusofdemande</th>
+             
             
             </tr>
           </thead>
@@ -39,10 +39,9 @@
               <td>{{r.reservationdate}}</td>
               <td>{{r.numplaces}}</td>
               <td>{{r.numreservation}}</td>
+              <td>{{r.statusOfDemand}}</td>
               
-              
-              <td><a class="btn btn-danger" (click)="deletereservation(r.id)">Delete</a></td>
-              <td><a class="btn btn-warning" (click)="updatereservation(r.id)">Update</a></td>
+           
              
           </tr>
   

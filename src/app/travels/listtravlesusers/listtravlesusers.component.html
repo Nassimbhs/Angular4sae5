@@ -1,102 +1,129 @@
-<div class="main-panel">
-    <!-- BEGIN : Main Content-->
-    <div class="main-content">
-      <div class="content-wrapper"><div class="row">
-  
-  </div>
 
-  <section class="basic-elements">
-    
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header">
-            <h4 class="card-title mb-0">Search</h4>
-          </div>
-          <div class="card-content">
-            <div class="px-3">
-              <form class="form">
-                <div class="form-body">
-                  <div class="row">
-                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
-                      <fieldset class="form-group">
-                        <label for="basicInput">Destination</label>
-                        <input type="text" class="form-control" id="destination">
-                      </fieldset>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
-                      <fieldset class="form-group">
-                        <label for="helpInputTop">Duration</label>
-                        <input type="text" class="form-control" id="duration">
-                        
-                      </fieldset>
-                    </div>
-                    <div class="form-group">
-                      <label for="projectinput5">MissionType</label>
-                      <select id="projectinput5" name="missiontype" class="form-control">
-                        <option value="none" selected="" disabled="">MissionType</option>
-                        <option value="insepection">insepection</option>
-                        <option value="training_mission">training_mission</option>
-                        <option value="Alternation">Alternation</option>
-                        <option value="Insertion_contact">Insertion_contact</option>
-                    
-                      </select>
-                    </div>
-                    
-             
+
+
+        <div class="main-panel">
+          <!-- BEGIN : Main Content-->
+          <div class="main-content">
+            <div class="content-wrapper"><div class="row">
+        
+        </div>
+      
+        <section class="basic-elements">
+          
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title mb-0">Search</h4>
+                </div>
+                <div class="card-content">
+                  <div class="px-3">
+                    <form class="form">
+                      <div class="form-body">
+                        <div class="row">
+                          <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                            <fieldset class="form-group">
+                              <label for="basicInput">Destination</label>
+                              <input type="text" class="form-control" id="destination">
+                            </fieldset>
+                          </div>
+                          <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                            <fieldset class="form-group">
+                              <label for="helpInputTop">Duration</label>
+                              <input type="text" class="form-control" id="duration">
+                              
+                            </fieldset>
+                          </div>
+                          <div class="form-group">
+                            <label for="projectinput5">MissionType</label>
+                            <select id="projectinput5" name="missiontype" class="form-control">
+                              <option value="none" selected="" disabled="">MissionType</option>
+                              <option value="insepection">insepection</option>
+                              <option value="training_mission">training_mission</option>
+                              <option value="Alternation">Alternation</option>
+                              <option value="Insertion_contact">Insertion_contact</option>
+                          
+                            </select>
+                          </div>
+      
+                         
+                   
+                        </div>
+                      </div>
+                    </form>
+                    <td><a class="btn btn-success">Search</a></td>
                   </div>
                 </div>
-              </form>
-              <td><a class="btn btn-success"  >Search</a></td>
+              </div>
             </div>
           </div>
+          
+        </section>
+      
+        
+        
+      
+        <!--Basic Table Starts-->
+        <section id="simple-table">
+        <div class="row">
+        <div class="col-sm-12">
+      
+      
+      
+      
+      
+      
+          
+      
+      
+          
+          <div class="row match-height">
+            <div class="col-lg-4 col-md-6"
+                *ngFor="let c of listTravels ; let i = index">
+      
+                <div class="card" style="height: 543.109px;">
+                    <div class="card-header">
+                        <h4 class="card-title"></h4>
+                        <h6><b>Destination:</b>  {{c.destination}}</h6>
+                        <h6><b>MissionType:</b> {{c.missiontype}}</h6>
+                        <h6><b>Duration:</b> {{c.duration}}</h6>
+                      
+                    </div>
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="img-fluid" [src]="listImages[i]" alt="No image found"
+                                style="height: 200px;width: 100%;">
+                            <a class="btn btn-floating halfway-fab btn-large bg-danger"><i class="ft-plus"></i></a>
+                        </div>
+                        <br>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center">
+                                <a class="card-link dark"><i class="icon-equalizer"></i></a>
+                                <a class="card-link dark"><i class="icon-users"></i></a>
+                                <a class="card-link dark"><i class="icon-star"> </i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <div class="d-flex justify-content-center">
+                            <span class="badge bg-success white" style="margin-right: 10px;"></span>
+                            <button class="btn btn-success" (click)="travelsDetails(c.id)" >Détail
+               </button>&nbsp;&nbsp;
+                            <button class="btn btn-warning" (click)="addreservation(c.id)" >Réserver
+                             
+                          </button>
+                  
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    
-  </section>
-
-<!--Striped rows Light Starts-->
-<section id="striped-light">
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="card">
-        <div class="card-header">
-          <h4 class="card-title"><b>List Travels</b></h4>
-  
+       
         </div>
-        <div class="card-content">
-          <div class="card-body">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-             <th>Destination</th>
-              <th>Duration</th>
-              <th>StartDate</th>
-              <th>EndDate</th>
-              <th>MissionType</th>      
-              <th>Image</th>
-              <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                    <tr *ngFor="let c of listTravels; let i = index  paginate: { itemsPerPage:2, currentPage: p }">
-                        <td>{{c.destination}}</td>
-                        <td>{{c.duration}}</td>
-                        <td>{{c.startdate}}</td>
-                        <td>{{c.enddate}}</td>
-                        <td>{{c.missiontype}}</td>
-                        <td><img [src]="listImages[i]" alt="img" class="img-thumbnail rounded mx-auto" width="200px"></td>
-    
-                        <td><a class="btn btn-success" (click)="addreservation(c.id)" >Réserver</a></td>
-                        <td><a class="btn btn-warning"  (click)="travelsDetails(c.id)">Details</a></td>
-                </tr> 
-               
-              </tbody>
-            </table>
-          </div>
-         
-        </div></div></div></div></section></div></div></div>
+        </div>
+        </section>
+        <!--Basic Table Ends-->
+      
            
        
 

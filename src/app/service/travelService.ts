@@ -15,6 +15,12 @@ export class travelService {
 
     constructor(private _http:HttpClient) {}
 
+    retrievetravelcritere(travel:any){
+      return this._http.post<TravelModel[]>(this.travelsUrl+"/retrieve-travel-critere",travel);
+      
+    }
+
+
     getTravels(){
         return this._http.get<TravelModel[]>(this.travelsUrl+"/retrieve-all-travels");
     }
@@ -27,6 +33,7 @@ export class travelService {
       return this._http.get<TravelModel[]>(this.travelsUrl + '/getTravelByNumber');
     }
 
+   
 
 addTravel(travel:any){
     console.log('my travel ', travel);

@@ -10,6 +10,7 @@ import { ListreservationComponent } from './reservationtravel/listreservation/li
 import { StatComponent } from './travels/stat/stat.component';
 import { UpdatereservationtravelComponent } from './reservationtravel/updatereservationtravel/updatereservationtravel.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { DetailusersComponent } from './travels/detailusers/detailusers.component';
 const routes: Routes = [
   
    { path: "add-travel", component : AddtravelComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
    { path: "list-travel", component  : ListtravelComponent },
    { path: "listreservation", component  : ListreservationComponent },
    { path: "detailtravel/:id", component : DetailtravelComponent  },
+   { path: "detailtraveluser/:id", component : DetailusersComponent  },
    { path: "update-travel/:id", component : UpdatetravelComponent},
    { path: "update-reservationtravel/:id", component : UpdatereservationtravelComponent},
    { path: "stat", component : StatComponent},

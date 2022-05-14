@@ -5,6 +5,6 @@ export class  reservationtravel{
     users:number;
     numreservation:number;
     numplaces:number;
-   
+    statusOfDemand:string;
     
 }
